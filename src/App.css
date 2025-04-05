@@ -1,0 +1,519 @@
+/* =============================
+🌐 Global Reset & Base Styling
+============================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =============================
+🌸 Hero Section
+============================= */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 6rem;
+  gap: 10rem;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.hero-text {
+  max-width: 600px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-flowers {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.flower {
+  position: absolute;
+  animation: rotate 20s linear infinite;
+}
+
+.flower1 { bottom: 160px; right: 0px; }
+.flower2 { top: 130px; right: 180px; }
+.flower3 { top: 170px; right: -25px; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =============================
+👩‍💻 About Section
+============================= */
+.about-section {
+  background-color: #f5edf4;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+/* =============================
+🧠 Skills Section
+============================= */
+.skills-section {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.skills-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.skill svg {
+  transition: transform 0.3s ease;
+}
+
+.skill:hover svg {
+  transform: scale(1.2);
+}
+
+.skills-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 3rem 0 1rem;
+  text-decoration: underline;
+}
+
+
+/* =============================
+🧭 Navbar
+============================= */
+.custom-navbar {
+  background-color: #FFFBFF;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-btn svg {
+  color: #000;
+}
+
+.cv-btn {
+  background-color: #FFEAFE;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle svg {
+  color: #000;
+}
+
+/* =============================
+🍔 Mobile Dropdown Menu
+============================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-dropdown-menu {
+    position: fixed;
+    top: 60px;
+    right: 1rem;
+    width: 260px;
+    background-color: #FFFBFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 1.5rem 1rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: dropdownFade 0.3s ease-in-out;
+  }
+/*
+  @keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+    */
+
+  .mobile-full-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .mobile-full-links li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .mobile-full-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .mobile-full-footer button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-full-footer svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cv-btn-mobile {
+    background-color: #FFEAFE;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #000;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* =============================
+🌙 Dark Theme
+============================= */
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-theme a {
+  color: #ffffff !important;
+}
+
+.dark-theme .custom-navbar {
+  background-color: #1a1a1a;
+}
+
+.dark-theme .about-section{
+  background-color: #630048;
+}
+.dark-theme .socials-section {
+  background-color: #121212;
+}
+
+.dark-theme .theme-btn svg,
+.dark-theme .menu-toggle svg {
+  color: #ffffff;
+}
+
+.dark-theme .cv-btn {
+  color: #ffffff;
+  background-color: #530046;
+}
+
+.dark-theme .mobile-dropdown-menu {
+  background-color: #2a2a2a;
+}
+
+.dark-theme .mobile-full-links li a {
+  color: #ffffff;
+}
+
+.dark-theme .mobile-full-footer button svg {
+  color: #ffffff;
+}
+
+.dark-theme .cv-btn-mobile {
+  background-color: #93007c;
+  color: #ffffff;
+}
+
+.dark-theme .skills-section {
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark-theme .skill {
+  color: #fff;
+}
+/* =============================
+💼 Projects Section
+============================= */
+.projects-section {
+  padding: 6rem 2rem;
+  background-color: #f5edf4;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects-subtitle {
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.project-img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.project-details {
+  flex: 1;
+  text-align: left;
+}
+
+.project-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tag {
+  background-color: #e5e5e5;
+  color: #333;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.external-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.dark-theme .projects-section {
+  background-color: #630048;
+  color: #fff;
+}
+
+.dark-theme .project-card {
+  background-color: #1f1f1f;
+}
+
+.dark-theme .tag {
+  background-color: #333;
+  color: #eee;
+}
+
+.dark-theme .external-link {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-details {
+    text-align: center;
+  }
+
+  .project-img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* =============================
+📢 Socials & Contact
+============================= */
+.socials-section {
+  background-color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.socials-section h2 {
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+}
+
+.contact-section {
+  background-color: #f5edf4;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact-section form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #fffaff;
+}
+
+.contact-section button {
+  padding: 0.6rem;
+  background-color: #CBAACB;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #444;
+  background-color: #FFFBFF;
+}
+
+.dark-theme .contact-section {
+  background-color: #630048;
+  color: #fff;
+}
+
+.dark-theme .contact-section input,
+.dark-theme .contact-section textarea {
+  background-color: #400c37;
+  color: #ffffff;
+}
+
+.dark-theme .footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+}
+
+.social-icons a svg {
+  color: #000; /* black in light mode */
+  transition: color 0.3s ease;
+}
+
+.dark-theme .social-icons a svg {
+  color: #fff; /* white in dark mode */
+}
