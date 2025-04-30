@@ -50,7 +50,7 @@ function Navbar() {
               </button>
             </li>
             <li>
-              <a href="/Seta_CV.pdf" target="_blank" className="cv-btn" rel="noopener noreferrer">
+              <a href="/CV-Setayesh.pdf" target="_blank" className="cv-btn" rel="noopener noreferrer">
                 Download CV
               </a>
             </li>
