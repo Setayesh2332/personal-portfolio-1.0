@@ -9,14 +9,14 @@ function Projects() {
       description: "A responsive personal portfolio showcasing projects, skills, and contact info.",
       image: Portfolio,
       tech: ["React", "Next.js", "Typescript","Figma", "CSS", "Git"],
-      link: "#"
+      link: "https://setayesh.netlify.app/"
     },
     {
       title: "Sentient",
       description: "An AI-powered assistant demo with integrated NLP and live querying capabilities.",
       image: Sentient,
       tech: ["React", "Next.js", "Typescript", "Figma", "Git"],
-      link: "#"
+      link: "https://sentient-app.netlify.app/"
     },
     {
       title: "Le Chainon",
