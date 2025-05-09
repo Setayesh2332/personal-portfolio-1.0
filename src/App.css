@@ -429,6 +429,10 @@ html, body {
   }
 }
 
+.figma-link {
+  font-size: 0.85em; /* Adjust the size as needed */
+}
+
 /* =============================
 📢 Socials & Contact
 ============================= */

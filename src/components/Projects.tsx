@@ -16,7 +16,8 @@ function Projects() {
       description: "An AI-powered assistant demo with integrated NLP and live querying capabilities.",
       image: Sentient,
       tech: ["React", "Next.js", "Typescript", "Figma", "Git"],
-      link: "https://sentient-app.netlify.app/"
+      link: "https://sentient-app.netlify.app/",
+      figmaLink: "https://www.figma.com/design/CVe75JV86Pdk19oU68ar1l/Untitled?node-id=0-1&t=BIpQ4D0xKzz3zIbb-0"
     },
     {
       title: "Le Chainon",
@@ -44,9 +45,16 @@ function Projects() {
                   <span className="tag" key={i}>{tech}</span>
                 ))}
               </div>
-              <a href={proj.link} target="_blank" rel="noopener noreferrer" className="external-link">
-                ↗
-              </a>
+              <div className="project-links">
+                <a href={proj.link} target="_blank" rel="noopener noreferrer" className="external-link">
+                  ↗
+                </a>
+                {proj.figmaLink && (
+                  <a href={proj.figmaLink} target="_blank" rel="noopener noreferrer" className="external-link figma-link">
+                   (Figma)
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}
