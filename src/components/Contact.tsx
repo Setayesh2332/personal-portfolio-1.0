@@ -1,4 +1,3 @@
-// src/components/Contact.tsx
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { sendContactForm } from "../services/emailService";
