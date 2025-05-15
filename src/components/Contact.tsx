@@ -1,64 +1,66 @@
-import { useState } from "react";
+// src/components/Contact.tsx
+import { useState, useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { sendContactForm } from "../services/emailService";
 
-function Contact() {
+export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // initialize EmailJS once
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_KEY!);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formRef.current) return;
 
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data as any).toString(),
-    })
+    sendContactForm(formRef.current)
       .then(() => setSubmitted(true))
-      .catch((error) => alert("Error: " + error));
+      .catch((err) => {
+        console.error("Error sending email:", err);
+        setSubmitted(false);
+      });
   };
 
   return (
     <section id="contact" className="contact-section">
       <h2>Contact</h2>
+
       {submitted ? (
-        <p className="success-message">Thank you! Your message has been sent. 😊</p>
+        <p className="success-message">
+          Thank you! Your message has been sent. 😊
+        </p>
       ) : (
         <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
+          ref={formRef}
           onSubmit={handleSubmit}
           className="contact-form"
         >
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="name" placeholder="Name:" required />
-          <input type="email" name="email" placeholder="Email:" required />
-          <textarea name="message" rows={4} placeholder="Message:" required></textarea>
-          <button type="submit" className="cv-btn-mobile">Send</button>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name:"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email:"
+            required
+          />
+          <textarea
+            name="message"
+            rows={4}
+            placeholder="Message:"
+            required
+          />
+          <button type="submit" className="cv-btn-mobile">
+            Send
+          </button>
         </form>
       )}
     </section>
   );
 }
-
-export default Contact;
-
-
-/*function Contact() {
-    return (
-      <section id="contact" className="contact-section">
-        <h2>Contact</h2>
-        <form name="contact" method="POST" data-netlify="true" className="contact-form">
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="name" placeholder="Name:" required />
-          <input type="email" name="email" placeholder="Email:" required />
-          <textarea name="message" rows={4} placeholder="Message:" required></textarea>
-          <button type="submit" className="cv-btn-mobile">Send</button>
-        </form>
-      </section>
-    );
-  }
-  
-  export default Contact; 
-  */
