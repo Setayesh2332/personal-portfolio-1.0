@@ -5,13 +5,13 @@ function Socials() {
     <section id="socials" className="socials-section">
       <h2>Socials</h2>
       <div className="social-icons">
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/Setayesh2332" target="_blank" rel="noopener noreferrer">
           <FaGithub size={40} />
         </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/setayesh-abbasi-moghadam/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin size={40} />
         </a>
-        <a href="mailto:youremail@example.com">
+        <a href="mailto:abbasimoghadam222@gmail.com">
           <FaEnvelope size={40} />
         </a>
       </div>
