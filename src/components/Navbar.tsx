@@ -76,7 +76,7 @@ function Navbar() {
             <button onClick={toggleTheme}>
               {darkMode ? <Moon size={20} /> : <Sun size={20} />}
             </button>
-            <a href="/Seta_CV.pdf" target="_blank" className="cv-btn-mobile" rel="noopener noreferrer">
+            <a href="/CV-Setayesh.pdf" target="_blank" className="cv-btn-mobile" rel="noopener noreferrer">
               Download CV
             </a>
           </div>
