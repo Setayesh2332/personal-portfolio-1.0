@@ -1,5 +1,4 @@
-import React from "react";
- import "../App.css";
+import "../App.css";
 import { useEffect, useState } from "react";
  
  function Home() {
