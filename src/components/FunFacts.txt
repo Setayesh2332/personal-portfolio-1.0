@@ -1,0 +1,20 @@
+function FunFacts() {
+  const facts = [
+    "I can solve a Rubik's cube under a minute.",
+    "I speak three languages.",
+    "I once built a robot from scrap parts.",
+  ];
+
+  return (
+    <section id="funfacts" className="funfacts-section">
+      <h2>Fun Facts</h2>
+      <ul className="funfacts-list">
+        {facts.map((fact, idx) => (
+          <li key={idx} className="funfact">{fact}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export default FunFacts;

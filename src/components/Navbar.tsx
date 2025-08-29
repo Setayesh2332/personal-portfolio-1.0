@@ -40,10 +40,11 @@ function Navbar() {
 
         <div className="nav-right">
           <ul className="nav-links">
-            <li><a href="#about">About Me</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#socials">Socials</a></li>
+            <li><a href="#funfacts">Fun Facts</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li>
               <button className="theme-btn" onClick={toggleTheme}>
                 {darkMode ? <Moon size={16} /> : <Sun size={16} />}
@@ -66,10 +67,11 @@ function Navbar() {
       {menuOpen && (
         <div className="mobile-dropdown-menu" ref={menuRef}>
           <ul className="mobile-full-links">
-            <li><a href="#about" onClick={() => setMenuOpen(false)}>About Me</a></li>
+            <li><a href="#cv" onClick={() => setMenuOpen(false)}>CV</a></li>
+            <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
             <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
-            <li><a href="#project" onClick={() => setMenuOpen(false)}>Project</a></li>
-            <li><a href="#socials" onClick={() => setMenuOpen(false)}>Socials</a></li>
+            <li><a href="#funfacts" onClick={() => setMenuOpen(false)}>Fun Facts</a></li>
+            <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
           </ul>
 
           <div className="mobile-full-footer">
