@@ -11,13 +11,13 @@ html, body {
 
 body {
   background-color: #ffffff;
-  background-image: radial-gradient(#d8d8d8 1px, transparent 1px);
+  background-image: radial-gradient(#d8d8d8 3px, transparent 3px);
   background-size: 50px 50px;
 }
 
 .dark-theme {
   background-color: #121212;
-  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-image: radial-gradient(#333 3px, transparent 3px);
   background-size: 50px 50px;
 }
 
@@ -73,42 +73,43 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: -1;
 }
 
 .doodle-square {
   position: absolute;
-  width: 240px;
-  height: 180px;
+  width: 220px;
+  height: 160px;
   background-color: #ffffff;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
-  border: 2px solid #dddddd;
+  border: 3px solid #000000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .square1 {
-  top: 10%;
+  top: 5%;
   left: 5%;
   background-image: url("/box1.png");
 }
 
 .square2 {
-  top: 20%;
-  right: 10%;
+  top: 15%;
+  right: 5%;
   background-image: url("/box2.png");
 }
 
 .square3 {
   bottom: 15%;
-  left: 15%;
+  left: 10%;
   background-image: url("/box3.png");
 }
 
 .square4 {
-  bottom: 10%;
-  right: 15%;
+  bottom: 5%;
+  right: 10%;
   background-image: url("/box4.png");
 }
 
@@ -147,73 +148,6 @@ body {
   background-color: #f5edf4;
   padding: 6rem 2rem;
   text-align: center;
-}
-
-/* =============================
-📄 CV Card
-============================= */
-.cv-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: #eaf2ff;
-  border-radius: 16px;
-  padding: 2rem;
-}
-
-.cv-card-image {
-  position: relative;
-  flex: 1 1 40%;
-}
-
-.cv-card-image img {
-  width: 100%;
-  display: block;
-  border-radius: 12px;
-}
-
-.cv-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000;
-  text-decoration: none;
-}
-
-.cv-card-content {
-  flex: 1 1 50%;
-  text-align: left;
-}
-
-.cv-card-content h2 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.cv-card-content p {
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-  .cv-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cv-card-content {
-    text-align: center;
-  }
 }
 
 /* =============================
@@ -455,11 +389,6 @@ body {
   background-color: #2a2a2a;
 }
 
-.dark-theme .cv-play {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
 .dark-theme .mobile-dropdown-menu {
   background-color: #2a2a2a;
 }
@@ -492,9 +421,9 @@ body {
   padding: 6rem 2rem;
   text-align: center;
   background-color: #ffffff;
-  background-image: linear-gradient(to right, #e5e5e5 1px, transparent 1px),
-    linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-image: linear-gradient(to right, #e5e5e5 2px, transparent 2px),
+    linear-gradient(to bottom, #e5e5e5 2px, transparent 2px);
+  background-size: 60px 60px;
 }
 
 .projects-title {
@@ -513,65 +442,65 @@ body {
 
 .projects-grid {
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .project-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 260px;
   background-color: #f9f9f9;
-  padding: 1.5rem;
+  padding: 1rem;
+  border: 3px solid #000;
   border-radius: 12px;
-  gap: 2rem;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  font-family: system-ui, sans-serif;
 }
 
 .project-img {
-  width: 300px;
+  width: 100%;
   height: auto;
   border-radius: 8px;
-  flex-shrink: 0;
+  margin-bottom: 1rem;
 }
 
 .project-details {
-  flex: 1;
   text-align: left;
 }
 
 .project-details h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
 }
 
 .tag {
   background-color: #e5e5e5;
   color: #333;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
 }
 
 .external-link {
   display: inline-block;
   margin-top: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
 }
 
 .dark-theme .projects-section {
   background-color: #121212;
-  background-image: linear-gradient(to right, #333 1px, transparent 1px),
-    linear-gradient(to bottom, #333 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-image: linear-gradient(to right, #333 2px, transparent 2px),
+    linear-gradient(to bottom, #333 2px, transparent 2px);
+  background-size: 60px 60px;
   color: #fff;
 }
 
@@ -769,37 +698,35 @@ body {
 
 .cv-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
   background-color: #ffffff;
   border: 2px solid #d2d6dc;
+  border: 3px solid #000;
   border-radius: 0;
-  padding: 2rem;
-  max-width: 900px;
+  max-width: 360px;
   width: 100%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 .cv-image-wrapper {
-  flex-shrink: 0;
-  border: 2px solid #d2d6dc;
-  border-radius: 0;
-  overflow: hidden;
+  width: 100%;
 }
 
 .cv-image {
   display: block;
-  width: 200px;
+  width: 100%;
   height: auto;
 }
 
 .cv-content {
-  flex: 1;
+  padding: 1.5rem;
+  text-align: center;
 }
 
 .cv-content h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #202124;
   margin: 0 0 1rem;
@@ -807,27 +734,15 @@ body {
 
 .cv-content p {
   color: #202124;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
 }
 
 .cv-view-btn {
   display: inline-block;
   background-color: #1a73e8;
   color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   font-weight: 500;
-}
-
-.cv-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border: 2px solid #d2d6dc;
-  border-radius: 50%;
-  color: #1a73e8;
-  font-size: 1.5rem;
   text-decoration: none;
 }

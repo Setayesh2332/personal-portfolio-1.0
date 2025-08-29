@@ -19,15 +19,6 @@ function CV() {
             View CV
           </a>
         </div>
-        <a
-          href="/CV-Setayesh.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cv-arrow"
-          aria-label="View CV"
-        >
-          →
-        </a>
       </div>
     </section>
   );
