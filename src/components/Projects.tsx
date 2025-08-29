@@ -30,9 +30,11 @@ function Projects() {
 
   return (
     <section id="projects" className="projects-section">
-      <h2>Projects</h2>
-      <p className="projects-subtitle">Some of the noteworthy projects I have built:</p>
-
+      <p className="discover-more" aria-label="discover more projects">
+        <span aria-hidden="true">✨</span> Discover more projects
+      </p>
+      <h2 className="projects-title">Latest projects from Setayesh</h2>
+      
       <div className="projects-grid">
         {projects.map((proj, idx) => (
           <div className="project-card" key={idx}>

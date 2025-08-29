@@ -3,7 +3,7 @@ import Home from "./components/Home";
 import CV from "./components/CV";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-// import FunFacts from "./components/FunFacts";
+import FunFacts from "./components/FunFacts";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -16,6 +16,7 @@ function App() {
         <CV />
         <Projects />
         <Skills />
+        <FunFacts />
         <Contact />
         <Footer />
       </main>
