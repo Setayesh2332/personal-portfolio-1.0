@@ -1,19 +1,24 @@
 import { useState } from "react";
 
-const skills: Record<string, string[]> = {
+type Category = "Tools" | "Languages" | "Frameworks" | "Others";
+
+const skills: Record<Category, string[]> = {
   Languages: ["JavaScript", "Python", "Java", "HTML5", "CSS3"],
   Frameworks: ["React"],
   Tools: ["Git", "Figma"],
   Others: ["Problem Solving", "Teamwork"],
 };
-const segments = [
-  { cat: "Tools", color: "red" },
+
+type Segment = { cat: string; color: string };
+
+const initialSegments: Segment[] = [
   { cat: "Tools", color: "red" },
   { cat: "Languages", color: "yellow" },
-  { cat: "Languages", color: "yellow" },
-  { cat: "Frameworks", color: "blue" },
   { cat: "Frameworks", color: "blue" },
   { cat: "Others", color: "white" },
+  { cat: "Tools", color: "red" },
+  { cat: "Languages", color: "yellow" },
+  { cat: "Frameworks", color: "blue" },
   { cat: "Others", color: "white" },
 ];
 
@@ -57,20 +62,35 @@ const describeArc = (
 };
 
 const Skills = () => {
-  const [rotation, setRotation] = useState(0);
-  
-  const spinWheel = () => setRotation((r) => r + 360);
+  const [rotation, setRotation] = useState(-90); // offset so first segment starts at the top
+  const [segments, setSegments] = useState<Segment[]>(initialSegments);
+  const [selected, setSelected] = useState<Segment | null>(null);
+
+  const spinWheel = () => {
+    const shuffled = [...segments].sort(() => Math.random() - 0.5);
+    const randomIndex = Math.floor(Math.random() * shuffled.length);
+    const turns = Math.floor(Math.random() * 3) + 3; // 3-5 full rotations
+    const anglePerSeg = 360 / shuffled.length;
+    const newRotation =
+      rotation + turns * 360 + randomIndex * anglePerSeg + anglePerSeg / 2;
+
+    setSegments(shuffled);
+    setRotation(newRotation);
+    setSelected(shuffled[randomIndex]);
+  };
 
   return (
     <section id="skills" className="skills-section">
       <div className="skills-container">
         <div className="wheel-wrapper">
+          <div className="pointer" />
+          {selected && <div className="result-bubble">{selected.cat}</div>}
           <svg
             viewBox="0 0 200 200"
             className="skill-wheel"
             style={{ transform: `rotate(${rotation}deg)` }}
           >
-             {segments.map((seg, index) => {
+            {segments.map((seg, index) => {
               const start = index * 45;
               const end = start + 45;
               const d = describeArc(100, 100, 100, start, end);
@@ -83,7 +103,8 @@ const Skills = () => {
             Spin
           </button>
         </div>
-           <div className="skill-details">
+         <div className="divider" />
+        <div className="skill-details">
           <h3>My Skills</h3>
           {Object.entries(skills).map(([category, items]) => (
             <div key={category}>
