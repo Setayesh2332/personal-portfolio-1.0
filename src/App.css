@@ -21,6 +21,10 @@ body {
   background-size: 50px 50px;
 }
 
+main > section:not(:first-of-type) {
+  border-top: 1px solid #000;
+}
+
 /* =============================
 🌸 Hero Section
 ============================= */
@@ -641,6 +645,10 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+   background-color: #ffffff;
+  background-image: linear-gradient(to right, #e5e5e5 2px, transparent 2px),
+    linear-gradient(to bottom, #e5e5e5 2px, transparent 2px);
+  background-size: 60px 60px;
 }
 
 .funfacts-name {
@@ -650,6 +658,7 @@ body {
   font-size: clamp(4rem, 20vw, 10rem);
   font-weight: bold;
   pointer-events: none;
+  z-index: 0;
 }
 
 .fact-card {
@@ -662,8 +671,7 @@ body {
   z-index: 1;
 }
 
-.next-btn,
-.reminder-btn {
+.next-btn {
   margin-top: 1rem;
   padding: 0.6rem 1.2rem;
   border: none;
@@ -672,6 +680,27 @@ body {
   color: #fff;
   cursor: pointer;
   font-weight: 500;
+}
+
+.reminder-btn {
+  margin-top: 1rem;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-theme .funfacts-hero {
+  background-color: #121212;
+  background-image: linear-gradient(to right, #333 2px, transparent 2px),
+    linear-gradient(to bottom, #333 2px, transparent 2px);
+  background-size: 60px 60px;
 }
 
 .dark-theme .fact-card {
@@ -684,6 +713,17 @@ body {
 .dark-theme .reminder-btn {
   background-color: #fff;
   color: #000;
+}
+
+@media (max-width: 768px) {
+  .funfacts-hero {
+    flex-direction: column;
+  }
+  .funfacts-name {
+    position: relative;
+    margin-bottom: 2rem;
+    z-index: 1;
+  }
 }
 
 /* =============================

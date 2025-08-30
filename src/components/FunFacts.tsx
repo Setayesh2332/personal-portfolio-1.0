@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FiRefreshCw } from "react-icons/fi";
 
 function FunFacts() {
   const facts = [
@@ -33,8 +34,12 @@ function FunFacts() {
           </button>
         </div>
       ) : (
-        <button onClick={resetFacts} className="reminder-btn">
-          Need reminder :)
+       <button
+          onClick={resetFacts}
+          className="reminder-btn"
+          aria-label="Need reminder"
+        >
+          <FiRefreshCw size={24} />
         </button>
       )}
     </section>
