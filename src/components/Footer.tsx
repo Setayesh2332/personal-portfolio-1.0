@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope} from "react-icons/fa";
 
 function Footer() {
     return (
@@ -20,13 +20,6 @@ function Footer() {
         </a>
         <a href="mailto:abbasimoghadam222@gmail.com">
           <FaEnvelope size={28} />
-        </a>
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram size={28} />
         </a>
       </div>
 

@@ -458,6 +458,7 @@ main > section:not(:first-of-type) {
 
 .dark-theme .cv-card {
   background-color: #2a2a2a;
+  border-color: #3c4043;
 }
 
 .dark-theme .mobile-dropdown-menu {
@@ -1018,51 +1019,102 @@ main > section:not(:first-of-type) {
 
 .cv-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
-  border: 2px solid #d2d6dc;
-  border: 3px solid #000;
-  border-radius: 0;
-  max-width: 360px;
+  background-color: #f1f7ff;
+  border: 1px solid #d2d6dc;
+  border-radius: 12px;
+  max-width: 900px;
   width: 100%;
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
 }
 
 .cv-image-wrapper {
-  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 }
 
 .cv-image {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 8px;
+  border: 1px solid #d2d6dc;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: #1a73e8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.play-icon {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+}
+
+.cv-carousel-dots {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.cv-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #c3d4ff;
+  border-radius: 50%;
 }
 
 .cv-content {
-  padding: 1.5rem;
-  text-align: center;
+  flex: 1;
+  padding: 2rem;
+  text-align: left;
 }
 
 .cv-content h2 {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.75rem;
+  font-weight: 600;
   color: #202124;
   margin: 0 0 1rem;
 }
 
 .cv-content p {
   color: #202124;
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
 }
 
 .cv-view-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background-color: #1a73e8;
   color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
   font-weight: 500;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .cv-card {
+    flex-direction: column;
+  }
+
+  .cv-content {
+    text-align: center;
+    padding: 1.5rem;
+  }
 }
