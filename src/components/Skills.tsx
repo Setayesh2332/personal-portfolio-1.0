@@ -1,37 +1,21 @@
 import { useState } from "react";
-import {
-    SiJavascript,
-  SiPython,
-  SiHtml5,
-  SiCss3,
-  SiReact,
-  SiGit,
-  SiFigma,
-} from "react-icons/si";
-import { FaJava } from "react-icons/fa";
 
-type Skill = {
-  name: string;
-  Icon: React.ComponentType<{ size?: number }>;
-  blurb: string;
+const skills: Record<string, string[]> = {
+  Languages: ["JavaScript", "Python", "Java", "HTML5", "CSS3"],
+  Frameworks: ["React"],
+  Tools: ["Git", "Figma"],
+  Others: ["Problem Solving", "Teamwork"],
 };
-
-const skillData: Record<string, Skill[]> = {
-  Languages: [
-    { name: "JavaScript", Icon: SiJavascript, blurb: "Used in many web apps" },
-    { name: "Python", Icon: SiPython, blurb: "Great for scripts" },
-    { name: "Java", Icon: FaJava, blurb: "OOP strong" },
-    { name: "HTML5", Icon: SiHtml5, blurb: "Markup master" },
-    { name: "CSS3", Icon: SiCss3, blurb: "Styling wizard" },
-  ],
-  Frameworks: [{ name: "React", Icon: SiReact, blurb: "Frontend magic ✨" }],
-  Tools: [
-    { name: "Git", Icon: SiGit, blurb: "Version control" },
-    { name: "Figma", Icon: SiFigma, blurb: "Design drafts" },
-  ],
-};
-
-const categories = Object.keys(skillData);
+const segments = [
+  { cat: "Tools", color: "red" },
+  { cat: "Tools", color: "red" },
+  { cat: "Languages", color: "yellow" },
+  { cat: "Languages", color: "yellow" },
+  { cat: "Frameworks", color: "blue" },
+  { cat: "Frameworks", color: "blue" },
+  { cat: "Others", color: "white" },
+  { cat: "Others", color: "white" },
+];
 
 const describeArc = (
   x: number,
@@ -73,21 +57,12 @@ const describeArc = (
 };
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState("Languages");
   const [rotation, setRotation] = useState(0);
-
-  const handleCategoryClick = (cat: string) => setActiveCategory(cat);
-
-  const handleSurprise = () => {
-    const cats = categories;
-    const randomCat = cats[Math.floor(Math.random() * cats.length)];
-    setActiveCategory(randomCat);
-    setRotation((r) => r + 720); // spin twice
-  };
+  
+  const spinWheel = () => setRotation((r) => r + 360);
 
   return (
     <section id="skills" className="skills-section">
-      <h1>Technical Skills</h1>
       <div className="skills-container">
         <div className="wheel-wrapper">
           <svg
@@ -95,45 +70,31 @@ const Skills = () => {
             className="skill-wheel"
             style={{ transform: `rotate(${rotation}deg)` }}
           >
-            {categories.map((cat, index) => {
-              const start = index * 120;
-              const end = start + 120;
+             {segments.map((seg, index) => {
+              const start = index * 45;
+              const end = start + 45;
               const d = describeArc(100, 100, 100, start, end);
               return (
-                <path
-                  key={cat}
-                  d={d}
-                  className={
-                    "wheel-segment" +
-                    (activeCategory === cat ? " active" : "")
-                  }
-                  data-cat={cat}
-                  onClick={() => handleCategoryClick(cat)}
-                />
+                <path key={index} d={d} className={`wheel-segment ${seg.color}`} />
               );
             })}
           </svg>
-          <button className="surprise-button" onClick={handleSurprise}>
-            Surprise Me ✨
+          <button className="surprise-button" onClick={spinWheel}>
+            Spin
           </button>
         </div>
-          <div className="skill-details">
-          <h3>{activeCategory}</h3>
-          <div className="icon-grid">
-            {skillData[activeCategory].map((skill) => (
-              <div
-                key={skill.name}
-                className="icon-card"
-                title={`Used in ${skill.blurb}`}
-              >
-                <skill.Icon size={48} />
-                <span>{skill.name}</span>
-              </div>
-            ))}
-          </div>
-          <a href="#projects" className="projects-link">
-            See Projects with this Skill
-          </a>
+           <div className="skill-details">
+          <h3>My Skills</h3>
+          {Object.entries(skills).map(([category, items]) => (
+            <div key={category}>
+              <h4>{category}</h4>
+              <ol className="skill-list">
+                {items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ol>
+            </div>
+          ))}
         </div>
       </div>
     </section>

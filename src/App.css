@@ -158,7 +158,7 @@ main > section:not(:first-of-type) {
 🧠 Skills Section
 ============================= */
 .skills-section {
-  background-color: #ffffff;
+  background-color: #facc9b;
   padding: 6rem 2rem;
   text-align: center;
 }
@@ -174,6 +174,9 @@ main > section:not(:first-of-type) {
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
 }
 
 .wheel-wrapper {
@@ -198,14 +201,20 @@ main > section:not(:first-of-type) {
   stroke-width: 2;
 }
 
-.wheel-segment:nth-child(1) {
-  fill: #f4d35e;
+.wheel-segment.red {
+  fill: #e74c3c;
 }
-.wheel-segment:nth-child(2) {
-  fill: #f6a6b2;
+
+.wheel-segment.yellow {
+  fill: #f1c40f;
 }
-.wheel-segment:nth-child(3) {
-  fill: #c7e9b0;
+
+.wheel-segment.blue {
+  fill: #3498db;
+}
+
+.wheel-segment.white {
+  fill: #ffffff;
 }
 
 .wheel-segment.active {
@@ -225,50 +234,16 @@ main > section:not(:first-of-type) {
 
 .skill-details {
   max-width: 320px;
-  text-align: center;
+  text-align: left;
 }
 
 .skill-details h3 {
   margin-bottom: 1rem;
 }
 
-.icon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+.skill-list {
+  padding-left: 1.25rem;
 }
-
-.icon-card {
-  background-color: #fff5e6;
-  border-radius: 12px;
-  padding: 1rem;
-  width: 90px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.icon-card:hover {
-  transform: scale(1.1);
-  background-color: #ffe6a7;
-}
-
-.icon-card span {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.projects-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #666666;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
 
 /* =============================
 🧭 Navbar
@@ -479,22 +454,10 @@ main > section:not(:first-of-type) {
 }
 
 .dark-theme .skills-section {
-  background-color: #121212;
+   background-color: orange;
   color: #fff;
 }
 
-.dark-theme .icon-card {
-  background-color: #1e1e1e;
-  color: #fff;
-}
-
-.dark-theme .icon-card:hover {
-  background-color: #333333;
-}
-
-.dark-theme .projects-link {
-  color: #bbbbbb;
-}
 /* =============================
 💼 Projects Section
 ============================= */
@@ -505,7 +468,6 @@ main > section:not(:first-of-type) {
   background-image: linear-gradient(to right, #e5e5e5 2px, transparent 2px),
     linear-gradient(to bottom, #e5e5e5 2px, transparent 2px);
   background-size: 60px 60px;
-  align-items: center;
 }
 
 .projects-title {
