@@ -1,8 +1,20 @@
+import { useRef } from 'react';
 import Portfolio from '../assets/portfolio.png';
 import Sentient from '../assets/AI-sentient.png';
 import Chainon from '../assets/Chainon.png';
 
 function Projects() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const handleScroll = (direction: 'left' | 'right') => {
+    const container = scrollRef.current;
+    if (container) {
+      const scrollAmount = container.clientWidth;
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
   const projects = [
     {
       title: "Personal Portfolio",
@@ -34,9 +46,17 @@ function Projects() {
         <span aria-hidden="true">✨</span> Discover more projects
       </p>
       <h2 className="projects-title">Latest projects from Setayesh</h2>
-      
-      <div className="projects-grid">
-        {projects.map((proj, idx) => (
+
+      <div className="projects-scroll">
+        <button
+          className="scroll-button prev"
+          aria-label="previous project"
+          onClick={() => handleScroll('left')}
+        >
+          &#8249;
+        </button>
+        <div className="projects-grid" ref={scrollRef}>
+          {projects.map((proj, idx) => (
           <div className="project-card" key={idx}>
             <img src={proj.image} alt={proj.title} className="project-img" />
             <div className="project-details">
@@ -60,6 +80,14 @@ function Projects() {
             </div>
           </div>
         ))}
+        </div>
+        <button
+          className="scroll-button next"
+          aria-label="next project"
+          onClick={() => handleScroll('right')}
+        >
+          &#8250;
+        </button>
       </div>
     </section>
   );

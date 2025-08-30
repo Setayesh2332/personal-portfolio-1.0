@@ -505,6 +505,7 @@ main > section:not(:first-of-type) {
   background-image: linear-gradient(to right, #e5e5e5 2px, transparent 2px),
     linear-gradient(to bottom, #e5e5e5 2px, transparent 2px);
   background-size: 60px 60px;
+  align-items: center;
 }
 
 .projects-title {
@@ -521,22 +522,61 @@ main > section:not(:first-of-type) {
   margin-bottom: 0.5rem;
 }
 
+.projects-scroll {
+  position: relative;
+}
+
 .projects-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
   gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  justify-content: flex-start;
+}
+
+.projects-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
   width: 260px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
   background-color: #f9f9f9;
   padding: 1rem;
   border: 3px solid #000;
   border-radius: 12px;
   font-family: system-ui, sans-serif;
+}
+
+.scroll-button {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.scroll-button.prev {
+  left: 0;
+}
+
+.scroll-button.next {
+  right: 0;
 }
 
 .project-img {
@@ -616,6 +656,10 @@ main > section:not(:first-of-type) {
   .project-img {
     width: 100%;
     max-width: 320px;
+  }
+
+  .scroll-button {
+    display: flex;
   }
 }
 
@@ -1021,8 +1065,8 @@ main > section:not(:first-of-type) {
   display: flex;
   align-items: center;
   background-color: #f1f7ff;
-  border: 1px solid #d2d6dc;
-  border-radius: 12px;
+  border: 2px solid #000000;
+  border-radius: 0px;
   max-width: 900px;
   width: 100%;
   font-family: 'Roboto', sans-serif;
@@ -1041,8 +1085,8 @@ main > section:not(:first-of-type) {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  border: 1px solid #d2d6dc;
+  border-radius: 0px;
+  border: 2px solid #000000;
 }
 
 .play-overlay {
