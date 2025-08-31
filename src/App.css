@@ -177,12 +177,13 @@ main > section:not(:first-of-type) {
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 8px;
+  border: 1px solid #000000;
 }
 
 .wheel-wrapper {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 280px;
+  height: 280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -227,8 +228,8 @@ main > section:not(:first-of-type) {
 }
 
 .skill-wheel {
-  width: 250px;
-  height: 250px;
+  width: 280px;
+  height: 280px;
   cursor: pointer;
   transition: transform 1s ease-out;
 }

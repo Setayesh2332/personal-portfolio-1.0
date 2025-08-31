@@ -63,20 +63,18 @@ const describeArc = (
 
 const Skills = () => {
   const [rotation, setRotation] = useState(-90); // offset so first segment starts at the top
-  const [segments, setSegments] = useState<Segment[]>(initialSegments);
+  const [segments] = useState<Segment[]>(initialSegments);
   const [selected, setSelected] = useState<Segment | null>(null);
 
   const spinWheel = () => {
-    const shuffled = [...segments].sort(() => Math.random() - 0.5);
-    const randomIndex = Math.floor(Math.random() * shuffled.length);
+    const randomIndex = Math.floor(Math.random() * segments.length);
     const turns = Math.floor(Math.random() * 3) + 3; // 3-5 full rotations
-    const anglePerSeg = 360 / shuffled.length;
+    const anglePerSeg = 360 / segments.length;
     const newRotation =
       rotation + turns * 360 + randomIndex * anglePerSeg + anglePerSeg / 2;
 
-    setSegments(shuffled);
     setRotation(newRotation);
-    setSelected(shuffled[randomIndex]);
+    setSelected(segments[randomIndex]);
   };
 
   return (
@@ -106,16 +104,27 @@ const Skills = () => {
          <div className="divider" />
         <div className="skill-details">
           <h3>My Skills</h3>
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category}>
-              <h4>{category}</h4>
+          { selected ? (
+            <div>
+              <h4>{selected.cat}</h4>
               <ol className="skill-list">
-                {items.map((item) => (
+                {skills[selected.cat as Category].map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ol>
             </div>
-          ))}
+         ) : (
+            Object.entries(skills).map(([category, items]) => (
+              <div key={category}>
+                <h4>{category}</h4>
+                <ol className="skill-list">
+                  {items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </section>
