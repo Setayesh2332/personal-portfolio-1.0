@@ -1,51 +1,44 @@
 import { useState } from "react";
 
-type Category = "Tools" | "Languages" | "Frameworks" | "Others";
+type Category = "Languages" | "Frameworks" | "Tools" | "Others";
 
-const skills: Record<Category, string[]> = {
-  Languages: ["JavaScript", "Python", "Java", "HTML5", "CSS3"],
-  Frameworks: ["React"],
-  Tools: ["Git", "Figma"],
-  Others: ["Problem Solving", "Teamwork"],
+const categories: Record<Category, { color: string; items: string[] }> = {
+  Languages: {
+    color: "#2E42D1",
+    items: ["JavaScript", "Python", "Java", "HTML5", "CSS3"],
+  },
+  Frameworks: { color: "#CA3BE2", items: ["React"] },
+  Tools: { color: "#29B571", items: ["Git", "Figma"] },
+  Others: { color: "#FF701F", items: ["Problem Solving", "Teamwork"] },
 };
 
-type Segment = { cat: string; color: string };
-
-const initialSegments: Segment[] = [
-  { cat: "Tools", color: "red" },
-  { cat: "Languages", color: "yellow" },
-  { cat: "Frameworks", color: "blue" },
-  { cat: "Others", color: "white" },
-  { cat: "Tools", color: "red" },
-  { cat: "Languages", color: "yellow" },
-  { cat: "Frameworks", color: "blue" },
-  { cat: "Others", color: "white" },
-];
-
 const describeArc = (
-  x: number,
-  y: number,
+  cx: number,
+  cy: number,
   radius: number,
   startAngle: number,
   endAngle: number
 ) => {
   const polarToCartesian = (
-    cx: number,
-    cy: number,
+    centerX: number,
+    centerY: number,
     r: number,
-    angle: number
+    angleInDegrees: number
   ) => {
-    const rad = ((angle - 90) * Math.PI) / 180.0;
-    return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+   const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
+    return {
+      x: centerX + r * Math.cos(angleInRadians),
+      y: centerY + r * Math.sin(angleInRadians),
+    };
   };
 
-  const start = polarToCartesian(x, y, radius, endAngle);
-  const end = polarToCartesian(x, y, radius, startAngle);
+  const start = polarToCartesian(cx, cy, radius, endAngle);
+  const end = polarToCartesian(cx, cy, radius, startAngle);
   const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
   return [
     "M",
-    x,
-    y,
+    cx,
+    cy,
     "L",
     start.x,
     start.y,
@@ -62,69 +55,70 @@ const describeArc = (
 };
 
 const Skills = () => {
-  const [rotation, setRotation] = useState(-90); // offset so first segment starts at the top
-  const [segments] = useState<Segment[]>(initialSegments);
-  const [selected, setSelected] = useState<Segment | null>(null);
+  const catArray = Object.entries(categories) as [
+    Category,
+    { color: string; items: string[] }
+  ][];
+  const angle = 360 / catArray.length;
+  const [selected, setSelected] = useState(0);
 
-  const spinWheel = () => {
-    const randomIndex = Math.floor(Math.random() * segments.length);
-    const turns = Math.floor(Math.random() * 3) + 3; // 3-5 full rotations
-    const anglePerSeg = 360 / segments.length;
-    const newRotation =
-      rotation + turns * 360 + randomIndex * anglePerSeg + anglePerSeg / 2;
-
-    setRotation(newRotation);
-    setSelected(segments[randomIndex]);
+  const randomSelect = () => {
+    setSelected(Math.floor(Math.random() * catArray.length));
   };
 
   return (
     <section id="skills" className="skills-section">
+      <h2>
+        Discover my skills by <span>category</span>
+      </h2>
       <div className="skills-container">
-        <div className="wheel-wrapper">
+        <div className="discover-color">
           <div className="pointer" />
-          {selected && <div className="result-bubble">{selected.cat}</div>}
-          <svg
-            viewBox="0 0 200 200"
-            className="skill-wheel"
-            style={{ transform: `rotate(${rotation}deg)` }}
-          >
-            {segments.map((seg, index) => {
-              const start = index * 45;
-              const end = start + 45;
-              const d = describeArc(100, 100, 100, start, end);
-              return (
-                <path key={index} d={d} className={`wheel-segment ${seg.color}`} />
-              );
-            })}
-          </svg>
-          <button className="surprise-button" onClick={spinWheel}>
-            Spin
+          <div className="color-picker-container">
+            <div className="color-picker-center" />
+            <svg
+              className="color-picker"
+              viewBox="0 0 200 200"
+              style={{ transform: `rotate(${-selected * angle}deg)` }}
+            >
+              {catArray.map(([cat, data], idx) => {
+                const start = idx * angle;
+                const end = start + angle;
+                const d = describeArc(100, 100, 100, start, end);
+                return (
+                  <path
+                    key={cat}
+                    d={d}
+                    style={{ fill: data.color, stroke: "black" }}
+                    onClick={() => setSelected(idx)}
+                  />
+                );
+              })}
+            </svg>
+          </div>
+          <div className="label">
+            {catArray.map(([cat, data], idx) => (
+              <span
+                key={cat}
+                className="label__text"
+                style={{ color: data.color }}
+                onClick={() => setSelected(idx)}
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
+          <button className="surprise-button" onClick={randomSelect}>
+            Surprise me
           </button>
         </div>
-         <div className="divider" />
         <div className="skill-details">
-          <h3>My Skills</h3>
-          { selected ? (
-            <div>
-              <h4>{selected.cat}</h4>
-              <ol className="skill-list">
-                {skills[selected.cat as Category].map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ol>
-            </div>
-         ) : (
-            Object.entries(skills).map(([category, items]) => (
-              <div key={category}>
-                <h4>{category}</h4>
-                <ol className="skill-list">
-                  {items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ol>
-              </div>
-            ))
-          )}
+          <h3>{catArray[selected][0]}</h3>
+          <ol className="skill-list">
+            {catArray[selected][1].items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
@@ -132,4 +126,3 @@ const Skills = () => {
 };
 
 export default Skills;
-  
