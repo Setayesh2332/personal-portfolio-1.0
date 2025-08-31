@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Category = "Languages" | "Frameworks" | "Tools" | "Others";
 
@@ -25,7 +25,7 @@ const describeArc = (
     r: number,
     angleInDegrees: number
   ) => {
-   const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
+    const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
     return {
       x: centerX + r * Math.cos(angleInRadians),
       y: centerY + r * Math.sin(angleInRadians),
@@ -61,10 +61,28 @@ const Skills = () => {
   ][];
   const angle = 360 / catArray.length;
   const [selected, setSelected] = useState(0);
+   const [items, setItems] = useState<string[]>(catArray[0][1].items);
+  const [loading, setLoading] = useState(false);
+
+  function getSkillsByCategory(cat: Category) {
+    return Promise.resolve(categories[cat]?.items ?? []);
+  }
+
+  const handleSelect = (idx: number) => {
+    setSelected(idx);
+  };
 
   const randomSelect = () => {
     setSelected(Math.floor(Math.random() * catArray.length));
   };
+
+  // fetch skills whenever selected changes
+  useEffect(() => {
+    setLoading(true);
+    getSkillsByCategory(catArray[selected][0])
+      .then((res) => setItems(res))
+      .finally(() => setLoading(false));
+  }, [selected, catArray]);
 
   return (
     <section id="skills" className="skills-section">
@@ -90,7 +108,7 @@ const Skills = () => {
                     key={cat}
                     d={d}
                     style={{ fill: data.color, stroke: "black" }}
-                    onClick={() => setSelected(idx)}
+                    onClick={() => handleSelect(idx)}
                   />
                 );
               })}
@@ -100,9 +118,9 @@ const Skills = () => {
             {catArray.map(([cat, data], idx) => (
               <span
                 key={cat}
-                className="label__text"
+                className={`label__text${idx === selected ? " label__text--active" : ""}`}
                 style={{ color: data.color }}
-                onClick={() => setSelected(idx)}
+                onClick={() => handleSelect(idx)}
               >
                 {cat}
               </span>
@@ -114,11 +132,17 @@ const Skills = () => {
         </div>
         <div className="skill-details">
           <h3>{catArray[selected][0]}</h3>
-          <ol className="skill-list">
-            {catArray[selected][1].items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ol>
+           {loading ? (
+            <p className="skill-details__loading">Loading...</p>
+          ) : items.length === 0 ? (
+            <p className="skill-details__empty">No skills listed.</p>
+          ) : (
+            <ol className="skill-list">
+              {items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ol>
+          )}
         </div>
       </div>
     </section>

@@ -240,6 +240,10 @@ main > section:not(:first-of-type) {
   cursor: pointer;
 }
 
+.label__text--active {
+  text-decoration: underline;
+}
+
 
 .surprise-button {
   margin-top: 1rem;
@@ -290,6 +294,11 @@ main > section:not(:first-of-type) {
 
 .skill-list {
   padding-left: 1.25rem;
+}
+
+.skill-details__loading,
+.skill-details__empty {
+  margin-top: 1rem;
 }
 
 /* =============================
