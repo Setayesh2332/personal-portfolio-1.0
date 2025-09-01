@@ -61,19 +61,28 @@ const Skills = () => {
   ][];
   const angle = 360 / catArray.length;
   const [selected, setSelected] = useState(0);
-   const [items, setItems] = useState<string[]>(catArray[0][1].items);
+  const [rotation, setRotation] = useState(-angle / 2);
+  const [duration, setDuration] = useState(1);
+  const [items, setItems] = useState<string[]>(catArray[0][1].items);
   const [loading, setLoading] = useState(false);
 
   function getSkillsByCategory(cat: Category) {
     return Promise.resolve(categories[cat]?.items ?? []);
   }
 
-  const handleSelect = (idx: number) => {
+  const spinTo = (idx: number) => {
+    const rounds = Math.floor(Math.random() * 3) + 2; // at least 2 full spins
+    setDuration(1 + rounds * 0.5);
+    setRotation(-idx * angle - angle / 2 - rounds * 360);
     setSelected(idx);
   };
 
+  const handleSelect = (idx: number) => {
+    spinTo(idx);
+  };
+
   const randomSelect = () => {
-    setSelected(Math.floor(Math.random() * catArray.length));
+    spinTo(Math.floor(Math.random() * catArray.length));
   };
 
   // fetch skills whenever selected changes
@@ -97,7 +106,10 @@ const Skills = () => {
             <svg
               className="color-picker"
               viewBox="0 0 200 200"
-              style={{ transform: `rotate(${-selected * angle}deg)` }}
+              style={{
+                transform: `rotate(${rotation}deg)`,
+                transition: `transform ${duration}s ease-out`,
+              }}
             >
               {catArray.map(([cat, data], idx) => {
                 const start = idx * angle;
