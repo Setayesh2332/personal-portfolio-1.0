@@ -175,6 +175,9 @@ main > section:not(:first-of-type) {
   gap: 3rem;
   flex-wrap: wrap;
   background-color: #ffffff;
+  background-image: linear-gradient(#e5e5e5 2px, transparent 2px),
+    linear-gradient(90deg, #e5e5e5 2px, transparent 2px);
+  background-size: 60px 60px;
   padding: 2rem;
   border-radius: 8px;
   border: 1px solid #000000;
@@ -188,14 +191,13 @@ main > section:not(:first-of-type) {
   border-right: 1px solid #000000;
   padding-right: 2rem;
   margin-right: 2rem;
-}
+} 
 
 .color-picker-container {
   position: relative;
   width: 280px;
   height: 280px;
-  background-image: radial-gradient(#d8d8d8 3px, transparent 3px);
-  background-size: 50px 50px;
+  background: none;
 }
 
 .color-picker {
