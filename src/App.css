@@ -172,8 +172,12 @@ main > section:not(:first-of-type) {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 3rem;
   flex-wrap: wrap;
+  gap: 0;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
 .discover-color {
@@ -181,9 +185,9 @@ main > section:not(:first-of-type) {
   display: flex;
   flex-direction: column;
   align-items: center;
-   padding: 2rem;
-  border: 1px solid #000000;
-  border-radius: 8px;
+  padding: 2rem;
+  width: 380px;
+  border-right: 1px solid #000000;
   background-color: #ffffff;
   background-image:
     linear-gradient(#d8d8d8 1px, transparent 1px),
@@ -193,8 +197,8 @@ main > section:not(:first-of-type) {
 
 .color-picker-container {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 320px;
+  height: 320px;
   background: none;
 }
 
@@ -289,13 +293,10 @@ main > section:not(:first-of-type) {
 
 
 .skill-details {
-  max-width: 320px;
+  width: 260px;
   text-align: left;
   background-color: #ffffff;
   padding: 2rem;
-  border: 1px solid #000000;
-  border-radius: 8px;
-
 }
 
 .skill-details h3 {
