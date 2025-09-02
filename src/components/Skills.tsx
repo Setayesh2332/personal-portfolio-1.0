@@ -61,6 +61,8 @@ const Skills = () => {
   ][];
   const angle = 360 / catArray.length;
   const [selected, setSelected] = useState(0);
+  const [target, setTarget] = useState(0);
+  const [spinning, setSpinning] = useState(false);
   const [rotation, setRotation] = useState(-angle / 2);
   const [duration, setDuration] = useState(1);
   const [items, setItems] = useState<string[]>(catArray[0][1].items);
@@ -74,7 +76,8 @@ const Skills = () => {
     const rounds = Math.floor(Math.random() * 3) + 2; // at least 2 full spins
     setDuration(1 + rounds * 0.5);
     setRotation(-idx * angle - angle / 2 - rounds * 360);
-    setSelected(idx);
+    setTarget(idx);
+    setSpinning(true);
   };
 
   const handleSelect = (idx: number) => {
@@ -100,7 +103,10 @@ const Skills = () => {
           <h4>
           Discover my skills by <span>category</span>
           </h4>
-          <div className="pointer" />
+          <div
+            className="pointer"
+            style={{ borderTopColor: catArray[selected][1].color }}
+          />
           <div className="color-picker-container">
             <div className="color-picker-center" />
             <svg
@@ -109,6 +115,10 @@ const Skills = () => {
               style={{
                 transform: `rotate(${rotation}deg)`,
                 transition: `transform ${duration}s ease-out`,
+              }}
+              onTransitionEnd={() => {
+                setSelected(target);
+                setSpinning(false);
               }}
             >
               {catArray.map(([cat, data], idx) => {
