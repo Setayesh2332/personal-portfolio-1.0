@@ -163,8 +163,8 @@ main > section:not(:first-of-type) {
   text-align: center;
 }
 
-.skills-section h2 {
-  font-size: 2.5rem;
+.skills-section h4 {
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -234,7 +234,6 @@ main > section:not(:first-of-type) {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 20px solid #000000;
-  z-index: 2;
 }
 
 .label {

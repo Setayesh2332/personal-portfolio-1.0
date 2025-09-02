@@ -62,7 +62,7 @@ const Skills = () => {
   const angle = 360 / catArray.length;
   const [selected, setSelected] = useState(0);
   const [target, setTarget] = useState(0);
-  const [spinning, setSpinning] = useState(false);
+  const [, setSpinning] = useState(false);
   const [rotation, setRotation] = useState(-angle / 2);
   const [duration, setDuration] = useState(1);
   const [items, setItems] = useState<string[]>(catArray[0][1].items);
@@ -103,11 +103,11 @@ const Skills = () => {
           <h4>
           Discover my skills by <span>category</span>
           </h4>
-          <div
-            className="pointer"
-            style={{ borderTopColor: catArray[selected][1].color }}
-          />
           <div className="color-picker-container">
+            <div
+              className="pointer"
+              style={{ borderTopColor: catArray[selected][1].color }}
+            />
             <div className="color-picker-center" />
             <svg
               className="color-picker"
