@@ -95,11 +95,11 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills-section">
-      <h2>
-        Discover my skills by <span>category</span>
-      </h2>
       <div className="skills-container">
         <div className="discover-color">
+          <h4>
+          Discover my skills by <span>category</span>
+          </h4>
           <div className="pointer" />
           <div className="color-picker-container">
             <div className="color-picker-center" />

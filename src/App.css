@@ -170,7 +170,6 @@ main > section:not(:first-of-type) {
 
 .skills-container {
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 0;
@@ -178,6 +177,8 @@ main > section:not(:first-of-type) {
   border-radius: 8px;
   overflow: hidden;
   background-color: #ffffff;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .discover-color {
@@ -214,8 +215,8 @@ main > section:not(:first-of-type) {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 60px;
-  height: 60px;
+  width: 125px;
+  height: 125px;
   background-color: #ffffff;
   border: 2px solid #000000;
   border-radius: 50%;
@@ -256,7 +257,7 @@ main > section:not(:first-of-type) {
 
 .surprise-button {
   margin-top: 1rem;
-  background-color: #ffe6a7;
+  background-color: #ffffff;
   border: 1px solid #000000;
   padding: 0.5rem 1rem;
   border-radius: 8px;
