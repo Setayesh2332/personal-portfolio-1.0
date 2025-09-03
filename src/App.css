@@ -21,7 +21,8 @@ body {
   background-size: 50px 50px;
 }
 
-main > section:not(:first-of-type) {
+main > section:not(:first-of-type),
+main > footer {
   border-top: 1px solid #000;
 }
 
@@ -114,6 +115,18 @@ main > section:not(:first-of-type) {
 .square4 {
   bottom: 5%;
   right: 10%;
+  background-image: url("/box4.png");
+}
+
+.square5 {
+  bottom: 8%;
+  right: 18%;
+  background-image: url("/box4.png");
+}
+
+.square6 {
+  bottom: 30%;
+  right: 5%;
   background-image: url("/box4.png");
 }
 
@@ -886,7 +899,7 @@ main > section:not(:first-of-type) {
   text-align: center;
   font-size: 0.9rem;
   color: #444;
-  background-color: #FFFBFF;
+  background-color: #f3f3f3;
 }
 
 .footer-socials {
@@ -1115,7 +1128,7 @@ main > section:not(:first-of-type) {
   width: 100%;
   height: auto;
   border-radius: 0px;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
 }
 
 .play-overlay {
