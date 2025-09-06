@@ -28,6 +28,8 @@ import { useEffect, useState } from "react";
         <div className="doodle-square square4"></div>
         <div className="doodle-square square5"></div>
         <div className="doodle-square square6"></div>
+        <div className="doodle-square square7"></div>
+        <div className="doodle-square square8"></div>
       </div>
       <div className="google-doodle-name">
         {letters.map((letter, idx) => (
