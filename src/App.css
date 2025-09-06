@@ -95,38 +95,38 @@ main > footer {
 }
 
 .square1 {
-  top: 5%;
+  top: 15%;
   left: 5%;
   background-image: url("/box1.png");
 }
 
 .square2 {
-  top: 15%;
-  right: 5%;
+  top: 12%;
+  right: 3%;
   background-image: url("/box2.png");
 }
 
 .square3 {
   bottom: 15%;
-  left: 10%;
+  left: 4%;
   background-image: url("/box3.png");
 }
 
 .square4 {
-  bottom: 5%;
-  right: 10%;
+  bottom: 10%;
+  right: 5%;
   background-image: url("/box4.png");
 }
 
 .square5 {
   bottom: 8%;
-  right: 18%;
+  right: 35%;
   background-image: url("/box4.png");
 }
 
 .square6 {
-  bottom: 30%;
-  right: 5%;
+  bottom: 70%;
+  right: 35%;
   background-image: url("/box4.png");
 }
 
