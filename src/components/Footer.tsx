@@ -35,9 +35,6 @@ function Footer() {
       <p className="footer-help">
         Need something? → <a href="#contact">Contact Me</a>
       </p>
-      <p className="footer-legal">
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
-      </p>
       <p className="footer-copy">© 2025 Setayesh Abbasi M.</p>
     </footer>
   );
