@@ -1,15 +1,9 @@
 import "../App.css";
 import { useEffect, useState } from "react";
  
- function Home() {
+function Home() {
   const letters = ["S", "E", "T", "A", "Y", "E", "S", "H"];
-  const phrases = [
-    "love to code",
-    "am a student",
-    "am looking for a stage",
-    "am an artist",
-    "am amazing",
-  ];
+  const phrases = ["am amazing", "love to code", "am looking for a stage"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -39,10 +33,11 @@ import { useEffect, useState } from "react";
         ))}
        </div>
       <p className="intro-text">
-        Hi my name is Setayesh and I <span className="rotating-text">{phrases[index]}</span>
+        Hi my name is Setayesh and I <br />
+        <span className="rotating-text">{phrases[index]}</span>
       </p>
-     </section>
-   );
- }
- 
- export default Home;
+    </section>
+  );
+}
+
+export default Home;

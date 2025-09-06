@@ -125,50 +125,50 @@ main > footer {
 }
 
 .square1 {
-  top: 15%;
-  left: 10%;
+  top: 23%;
+  left: 5%;
   background-image: url("/box1.png");
 }
 
 .square2 {
-  top: 17%;
-  right: 7%;
+  top: 22%;
+  right: 3%;
   background-image: url("/box2.png");
 }
 
 .square3 {
-  bottom: 25%;
-  left: 7%;
+  bottom: 28%;
+  left: 4%;
   background-image: url("/box3.png");
 }
 
 .square4 {
-  bottom: 20%;
-  right: 10%;
+  bottom: 22%;
+  right: 1%;
   background-image: url("/box4.png");
 }
 
 .square5 {
-  bottom: 12%;
-  right: 38%;
+  bottom: 15%;
+  right: 27%;
   background-image: url("/box4.png");
 }
 
 .square6 {
-  bottom: 76%;
-  left: 37%;
+  top: 8%;
+  left: 25%;
   background-image: url("/box4.png");
 }
 
 .square7 {
-  bottom: 60%;
-  left: 13%;
+  bottom: 12%;
+  left: 27%;
   background-image: url("/box4.png");
 }
 
 .square8 {
-  bottom: 50%;
-  left: 50%;
+  top: 12%;
+  left: 52%;
   background-image: url("/box4.png");
 }
 
@@ -783,7 +783,7 @@ main > footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e5e5e5;
+  background-color: #d4ffcb;
   }
 
 .contact-card {
@@ -839,7 +839,7 @@ main > footer {
 }
 
 .send-btn {
-  background-color: #1a73e8;
+  background-color: #000000;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -850,7 +850,7 @@ main > footer {
 }
 
 .send-btn:hover {
-  background-color: #1669c1;
+  background-color: #24c116;
   transform: translateY(-2px);
 }
 
