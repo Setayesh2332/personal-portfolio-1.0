@@ -876,6 +876,10 @@ main > footer {
   animation: float 6s ease-in-out infinite;
 }
 
+.contact-section .doodle-squares {
+  z-index: 0;
+}
+
 .contact-section .doodle-square svg {
   width: 48px;
   height: 48px;
@@ -886,6 +890,7 @@ main > footer {
   top: 8%;
   left: 5%;
   --rotation: -8deg;
+  background-image: url("/bird-yellowBG.png");
 }
 
 .contact-doodle2 {
@@ -893,6 +898,7 @@ main > footer {
   right: 8%;
   --rotation: 6deg;
   animation-delay: 2s;
+  background-image: url("/bird-greenBG.png");
 }
 
 .contact-doodle3 {
@@ -900,6 +906,7 @@ main > footer {
   left: 10%;
   --rotation: 4deg;
   animation-delay: 1s;
+  background-image: url("/whitebird-blueBG.png");
 }
 
 .contact-doodle4 {
@@ -907,6 +914,7 @@ main > footer {
   right: 5%;
   --rotation: -5deg;
   animation-delay: 3s;
+  background-image: url("/bluebird.png");
 }
 
 @keyframes float {

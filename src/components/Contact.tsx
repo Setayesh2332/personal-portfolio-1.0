@@ -1,15 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import emailjs from "@emailjs/browser";
-import {
-  Mail,
-  MessageCircle,
-  Phone,
-  MapPin,
-  Hand,
-  MailCheck,
-  Smile,
-} from "lucide-react";
+import { Hand, MailCheck, Smile } from "lucide-react";
 import { sendContactForm } from "../services/emailService";
 
 export default function Contact() {
@@ -91,18 +83,10 @@ export default function Contact() {
       </div>
 
       <div className="doodle-squares">
-        <div className="doodle-square contact-doodle1">
-          <Mail />
-        </div>
-        <div className="doodle-square contact-doodle2">
-          <MessageCircle />
-        </div>
-        <div className="doodle-square contact-doodle3">
-          <Phone />
-        </div>
-        <div className="doodle-square contact-doodle4">
-          <MapPin />
-        </div>
+        <div className="doodle-square contact-doodle1" />
+        <div className="doodle-square contact-doodle2" />
+        <div className="doodle-square contact-doodle3" />
+        <div className="doodle-square contact-doodle4" />
       </div>
     </section>
   );
