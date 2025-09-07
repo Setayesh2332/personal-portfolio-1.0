@@ -38,6 +38,20 @@ function Projects() {
       image: Chainon,
       tech: ["React", "Next.js", "Typescript", "Tailwindcss", "Git"],
       link: "#"
+    },
+    {
+      title: "Le Chainon",
+      description: "A website designed to support women in need and promote social outreach.",
+      image: Chainon,
+      tech: ["React", "Next.js", "Typescript", "Tailwindcss", "Git"],
+      link: "#"
+    },
+    {
+      title: "Le Chainon",
+      description: "A website designed to support women in need and promote social outreach.",
+      image: Chainon,
+      tech: ["React", "Next.js", "Typescript", "Tailwindcss", "Git"],
+      link: "#"
     }
   ];
 

@@ -11,16 +11,22 @@
 }
 
 .projects-title {
-  font-size: 2.5rem;
+  font-size: 50px;
+  font-family: Google Sans, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #000000;
   margin-bottom: 3rem;
 }
 
 .discover-more {
-  color: #666;
+  color: #000000;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  font-size: 0.9rem;
+  font-size: 18px;
+  font-family: Google Sans, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
