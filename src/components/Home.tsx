@@ -1,4 +1,4 @@
-import "../App.css";
+import "./Home.css";
 import { useEffect, useState } from "react";
  
 function Home() {
@@ -24,6 +24,7 @@ function Home() {
         <div className="doodle-square square6"></div>
         <div className="doodle-square square7"></div>
         <div className="doodle-square square8"></div>
+        <div className="doodle-square square9"></div>
       </div>
       <div className="google-doodle-name">
         {letters.map((letter, idx) => (

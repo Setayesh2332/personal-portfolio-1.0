@@ -1,0 +1,219 @@
+/* Contact Section */
+.doodle-squares {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+.doodle-square {
+  position: absolute;
+  width: clamp(120px, 20vw, 220px);
+  aspect-ratio: 220 / 160;
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: 3px solid #000000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.contact-section {
+  position: relative;
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d4ffcb;
+  }
+
+.contact-card {
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+
+.contact-subtext {
+  margin: 0 0 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-input,
+.contact-textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #000;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s, min-height 0.3s ease;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.3);
+}
+
+.contact-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-textarea:focus {
+  min-height: 180px;
+}
+
+.send-btn {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.send-btn:hover {
+  background-color: #24c116;
+  transform: translateY(-2px);
+}
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.confirmation-icon {
+  animation: pop 0.6s ease forwards;
+}
+
+.contact-section .doodle-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(90px, 15vw, 160px);
+  aspect-ratio: 160 / 110;
+  --rotation: 0deg;
+  animation: float 6s ease-in-out infinite;
+}
+
+.contact-section .doodle-squares {
+  z-index: 0;
+}
+
+.contact-section .doodle-square svg {
+  width: 48px;
+  height: 48px;
+  color: #1a73e8;
+}
+
+.contact-doodle1 {
+  top: 8%;
+  left: 5%;
+  --rotation: -8deg;
+  background-image: url("/bird-yellowBG.png");
+}
+
+.contact-doodle2 {
+  top: 20%;
+  right: 8%;
+  --rotation: 6deg;
+  animation-delay: 2s;
+  background-image: url("/bird-greenBG.png");
+}
+
+.contact-doodle3 {
+  bottom: 18%;
+  left: 10%;
+  --rotation: 4deg;
+  animation-delay: 1s;
+  background-image: url("/whitebird-blueBG.png");
+}
+
+.contact-doodle4 {
+  bottom: 5%;
+  right: 5%;
+  --rotation: -5deg;
+  animation-delay: 3s;
+  background-image: url("/bluebird.png");
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(var(--rotation));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--rotation));
+  }
+  100% {
+    transform: translateY(0) rotate(var(--rotation));
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.dark-theme .contact-section {
+   background-color: #121212;
+}
+
+.dark-theme .contact-card {
+  background-color: #121212;
+  border-color: #333;
+  color: #fff;
+}
+
+.dark-theme .contact-input,
+.dark-theme .contact-textarea {
+  background-color: #1a1a1a;
+  border-color: #333;
+  color: #fff;
+}
+
+.dark-theme .send-btn {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-theme .contact-section .doodle-square {
+  background-color: #121212;
+  border-color: #333;
+}
+
+.dark-theme .contact-section .doodle-square svg {
+  color: #fff;
+}

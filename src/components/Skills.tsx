@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Skills.css";
 
 type Category = "Languages" | "Frameworks" | "Tools" | "Others";
 

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Sun, Moon, Menu } from "lucide-react";
+import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

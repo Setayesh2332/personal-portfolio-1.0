@@ -1,0 +1,35 @@
+/* =============================
+📢 Socials & Contact
+============================= */
+.socials-section {
+  background-color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.socials-section h2 {
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+}
+.dark-theme .socials-section {
+  background-color: #121212;
+}
+.social-icons a svg {
+  color: #000; /* black in light mode */
+  transition: color 0.3s ease;
+}
+
+.dark-theme .social-icons a svg {
+  color: #fff; /* white in dark mode */
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiRefreshCw } from "react-icons/fi";
+import "./FunFacts.css";
 
 function FunFacts() {
   const facts = [

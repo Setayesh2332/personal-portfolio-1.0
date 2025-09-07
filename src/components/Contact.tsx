@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import emailjs from "@emailjs/browser";
 import { Hand, MailCheck, Smile } from "lucide-react";
 import { sendContactForm } from "../services/emailService";
+import "./Contact.css";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);

@@ -1,0 +1,179 @@
+/* =============================
+🌸 Hero Section
+============================= */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 6rem;
+  gap: 10rem;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  position: relative;
+}
+
+.doodle-hero {
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.google-doodle-name {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.google-letter:nth-child(1) { color: #4285F4; }
+.google-letter:nth-child(2) { color: #DB4437; }
+.google-letter:nth-child(3) { color: #F4B400; }
+.google-letter:nth-child(4) { color: #4285F4; }
+.google-letter:nth-child(5) { color: #0F9D58; }
+.google-letter:nth-child(6) { color: #DB4437; }
+.google-letter:nth-child(7) { color: #4285F4; }
+.google-letter:nth-child(8) { color: #0F9D58; }
+
+.intro-text {
+  font-size: 1.5rem;
+}
+
+.rotating-text {
+  font-weight: 600;
+}
+
+.doodle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 150px;
+  gap: 3rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.doodle-card {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 3px solid #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doodle-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .doodle-card {
+    width: 180px;
+    height: auto;
+  }
+}
+
+.doodle-squares {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.doodle-square {
+  position: absolute;
+  width: clamp(120px, 20vw, 220px);
+  aspect-ratio: 220 / 160;
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: 3px solid #000000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.square1 {
+  top: 20%;
+  left: 2.5%;
+  background-image: url("/box1.png");
+}
+
+.square2 {
+  top: 2.7%;
+  right: 60%;
+  background-image: url("/box2.png");
+}
+
+.square3 {
+  top: -2.7%;
+  left: 53.5%;
+  background-image: url("/box3.png");
+}
+
+.square4 {
+  top: 14.5%;
+  right: 4.5%;
+  background-image: url("/box4.png");
+}
+
+.square5 {
+  top: 50%;
+  left: 0%;
+  background-image: url("/box4.png");
+}
+
+.square6 {
+  top: 61%;
+  right: -3%;
+  background-image: url("/box4.png");
+}
+
+.square7 {
+  top: 76%;
+  left: 12.8%;
+  background-image: url("/box4.png");
+}
+
+.square8 {
+  bottom: 5%;
+  left: 40%;
+  background-image: url("/box4.png");
+}
+
+.square9 {
+  bottom: -4%;
+  left: 67%;
+  background-image: url("/box4.png");
+}
+
+.hero-text {
+  max-width: 600px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-flowers {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.flower {
+  position: absolute;
+  animation: rotate 20s linear infinite;
+}
+
+.flower1 { bottom: 160px; right: 0px; }
+.flower2 { top: 130px; right: 180px; }
+.flower3 { top: 170px; right: -25px; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

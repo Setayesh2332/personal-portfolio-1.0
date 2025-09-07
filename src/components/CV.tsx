@@ -1,4 +1,5 @@
 import cvPreview from "../assets/portfolio.png";
+import "./CV.css";
 
 function CV() {
   return (

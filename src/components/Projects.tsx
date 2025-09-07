@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import Portfolio from '../assets/portfolio.png';
 import Sentient from '../assets/AI-sentient.png';
 import Chainon from '../assets/Chainon.png';
+import "./Projects.css";
 
 function Projects() {
   const scrollRef = useRef<HTMLDivElement>(null);
