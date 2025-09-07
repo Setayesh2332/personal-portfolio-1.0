@@ -11,7 +11,7 @@
 .cv-card {
   display: flex;
   align-items: center;
-  background-color: #f4f9ff;
+  background-color: #d8e2ff;
   border: 2px solid #000000;
   border-radius: 0px;
   max-width: 900px;
@@ -26,11 +26,15 @@
   flex-direction: column;
   align-items: center;
   flex: 1;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #8ab4f8;
+  border-right: 2px solid #000000;
 }
 
 .cv-image {
   display: block;
-  width: 100%;
+  width: 90%;
   height: auto;
   border-radius: 0px;
   border: 2px solid #000000;
@@ -66,7 +70,7 @@
 .cv-dot {
   width: 8px;
   height: 8px;
-  background-color: #c3d4ff;
+  background-color: #aecbfa;
   border-radius: 50%;
 }
 
