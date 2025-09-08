@@ -132,7 +132,7 @@
 .contact-doodle1 {
   top: 4%;
   left: 6%;
-  --rotation: -15deg;
+  --rotation: 15deg;
   width: clamp(110px, 18vw, 180px);
   background-image: url("/bird-yellowBG.png");
 }
@@ -156,7 +156,7 @@
 .contact-doodle4 {
   top: 42%;
   right: 2%;
-  --rotation: -10deg;
+  --rotation: 20deg;
   width: clamp(100px, 16vw, 160px);
   background-image: url("/bluebird.png");
 }
