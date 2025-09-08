@@ -1,25 +1,4 @@
 /* Contact Section */
-.doodle-squares {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.doodle-square {
-  position: absolute;
-  width: clamp(120px, 20vw, 220px);
-  aspect-ratio: 220 / 160;
-  background-color: #ffffff;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  border: 3px solid #000000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
 .contact-section {
   position: relative;
   padding: 6rem 2rem;
@@ -28,7 +7,7 @@
   justify-content: center;
   align-items: center;
   background-color: #e8eaed;
-  }
+}
 
 .contact-card {
   background-color: #fff;
@@ -40,6 +19,7 @@
   text-align: center;
   z-index: 1;
 }
+
 
 .contact-title {
   font-size: 2rem;
@@ -106,119 +86,3 @@
   font-weight: 500;
 }
 
-.confirmation-icon {
-  animation: pop 0.6s ease forwards;
-}
-
-.contact-section .doodle-square {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(90px, 15vw, 160px);
-  aspect-ratio: 160 / 110;
-  --rotation: 0deg;
-  transform: rotate(var(--rotation));
-}
-
-.contact-section .doodle-squares {
-  z-index: 0;
-}
-
-.contact-section .doodle-square svg {
-  width: 48px;
-  height: 48px;
-  color: #1a73e8;
-}
-
-.contact-doodle1 {
-  top: 4%;
-  left: 6%;
-  --rotation: 15deg;
-  width: clamp(110px, 18vw, 180px);
-  background-image: url("/bird-yellowBG.png");
-}
-
-.contact-doodle2 {
-  top: 8%;
-  right: 6%;
-  --rotation: 12deg;
-  width: clamp(90px, 15vw, 150px);
-  background-image: url("/bird-greenBG.png");
-}
-
-.contact-doodle3 {
-  top: 40%;
-  left: 2%;
-  --rotation: 10deg;
-  width: clamp(90px, 15vw, 150px);
-  background-image: url("/whitebird-blueBG.png");
-}
-
-.contact-doodle4 {
-  top: 42%;
-  right: 2%;
-  --rotation: 20deg;
-  width: clamp(100px, 16vw, 160px);
-  background-image: url("/bluebird.png");
-}
-
-.contact-doodle5 {
-  bottom: 10%;
-  left: 8%;
-  --rotation: 8deg;
-  width: clamp(110px, 18vw, 170px);
-  background-image: url("/bird-yellowBG.png");
-}
-
-.contact-doodle6 {
-  bottom: 4%;
-  right: 6%;
-  --rotation: -8deg;
-  width: clamp(120px, 20vw, 180px);
-  background-image: url("/bird-greenBG.png");
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  80% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-.dark-theme .contact-section {
-   background-color: #121212;
-}
-
-.dark-theme .contact-card {
-  background-color: #121212;
-  border-color: #333;
-  color: #fff;
-}
-
-.dark-theme .contact-input,
-.dark-theme .contact-textarea {
-  background-color: #1a1a1a;
-  border-color: #333;
-  color: #fff;
-}
-
-.dark-theme .send-btn {
-  background-color: #fff;
-  color: #000;
-}
-
-.dark-theme .contact-section .doodle-square {
-  background-color: #121212;
-  border-color: #333;
-}
-
-.dark-theme .contact-section .doodle-square svg {
-  color: #fff;
-}
