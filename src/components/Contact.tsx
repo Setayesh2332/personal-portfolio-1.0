@@ -82,15 +82,6 @@ export default function Contact() {
           </form>
         )}
       </div>
-
-      <div className="doodle-squares">
-        <div className="doodle-square contact-doodle1" />
-        <div className="doodle-square contact-doodle2" />
-        <div className="doodle-square contact-doodle3" />
-        <div className="doodle-square contact-doodle4" />
-        <div className="doodle-square contact-doodle5" />
-        <div className="doodle-square contact-doodle6" />
-      </div>
     </section>
   );
 }
