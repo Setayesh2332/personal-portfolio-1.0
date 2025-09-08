@@ -108,6 +108,11 @@
     flex-direction: column;
   }
 
+  .cv-image-wrapper {
+    border-right: none;
+    border-bottom: 2px solid #000000;
+  }
+  
   .cv-content {
     text-align: center;
     padding: 1.5rem;

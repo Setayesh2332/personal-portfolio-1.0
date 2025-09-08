@@ -117,7 +117,6 @@
   width: clamp(90px, 15vw, 160px);
   aspect-ratio: 160 / 110;
   --rotation: 0deg;
-  animation: float 6s ease-in-out infinite;
 }
 
 .contact-section .doodle-squares {
@@ -131,34 +130,51 @@
 }
 
 .contact-doodle1 {
-  top: 8%;
-  left: 5%;
-  --rotation: -8deg;
+  top: 4%;
+  left: 6%;
+  --rotation: -15deg;
+  width: clamp(110px, 18vw, 180px);
   background-image: url("/bird-yellowBG.png");
 }
 
 .contact-doodle2 {
-  top: 20%;
-  right: 8%;
-  --rotation: 6deg;
-  animation-delay: 2s;
+  top: 8%;
+  right: 6%;
+  --rotation: 12deg;
+  width: clamp(90px, 15vw, 150px);
   background-image: url("/bird-greenBG.png");
 }
 
 .contact-doodle3 {
-  bottom: 18%;
-  left: 10%;
-  --rotation: 4deg;
-  animation-delay: 1s;
+  top: 40%;
+  left: 2%;
+  --rotation: 10deg;
+  width: clamp(90px, 15vw, 150px);
   background-image: url("/whitebird-blueBG.png");
 }
 
 .contact-doodle4 {
-  bottom: 5%;
-  right: 5%;
-  --rotation: -5deg;
-  animation-delay: 3s;
+  top: 42%;
+  right: 2%;
+  --rotation: -10deg;
+  width: clamp(100px, 16vw, 160px);
   background-image: url("/bluebird.png");
+}
+
+.contact-doodle5 {
+  bottom: 10%;
+  left: 8%;
+  --rotation: 8deg;
+  width: clamp(110px, 18vw, 170px);
+  background-image: url("/bird-yellowBG.png");
+}
+
+.contact-doodle6 {
+  bottom: 4%;
+  right: 6%;
+  --rotation: -8deg;
+  width: clamp(120px, 20vw, 180px);
+  background-image: url("/bird-greenBG.png");
 }
 
 @keyframes float {

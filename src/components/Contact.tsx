@@ -88,6 +88,8 @@ export default function Contact() {
         <div className="doodle-square contact-doodle2" />
         <div className="doodle-square contact-doodle3" />
         <div className="doodle-square contact-doodle4" />
+        <div className="doodle-square contact-doodle5" />
+        <div className="doodle-square contact-doodle6" />
       </div>
     </section>
   );

@@ -31,7 +31,8 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  width: 380px;
+  flex: 1 1 55%;
+  box-sizing: border-box;
   border-right: 3px solid #000000;
   background-color: #ffffff;
   background-image:
@@ -42,8 +43,9 @@
 
 .color-picker-container {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
   background: none;
 }
 
@@ -59,8 +61,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 125px;
-  height: 125px;
+  width: 39%;
+  height: 39%;
   background-color: #ffffff;
   border: 2px solid #000000;
   border-radius: 50%;
@@ -137,10 +139,11 @@
 
 
 .skill-details {
-  width: 260px;
+  flex: 1 1 45%;
   text-align: left;
   background-color: #ffffff;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .skill-details h3 {
