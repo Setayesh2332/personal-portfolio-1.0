@@ -117,6 +117,7 @@
   width: clamp(90px, 15vw, 160px);
   aspect-ratio: 160 / 110;
   --rotation: 0deg;
+  transform: rotate(var(--rotation));
 }
 
 .contact-section .doodle-squares {
@@ -175,18 +176,6 @@
   --rotation: -8deg;
   width: clamp(120px, 20vw, 180px);
   background-image: url("/bird-greenBG.png");
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0) rotate(var(--rotation));
-  }
-  50% {
-    transform: translateY(-10px) rotate(var(--rotation));
-  }
-  100% {
-    transform: translateY(0) rotate(var(--rotation));
-  }
 }
 
 @keyframes pop {
