@@ -30,10 +30,6 @@
   margin-bottom: 0.5rem;
 }
 
-.projects-scroll {
-  position: relative;
-}
-
 .projects-grid {
   display: flex;
   flex-wrap: nowrap;
@@ -63,28 +59,24 @@
   font-family: system-ui, sans-serif;
 }
 
+.scroll-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .scroll-button {
-  display: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   border: 2px solid #000;
   background: #fff;
   cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-}
-
-.scroll-button.prev {
-  left: 0;
-}
-
-.scroll-button.next {
-  right: 0;
 }
 
 .project-img {
@@ -141,6 +133,12 @@
   background-color: #1f1f1f;
 }
 
+.dark-theme .scroll-button {
+  background: #1f1f1f;
+  border-color: #fff;
+  color: #fff;
+}
+
 .dark-theme .tag {
   background-color: #333;
   color: #eee;
@@ -164,10 +162,6 @@
   .project-img {
     width: 100%;
     max-width: 320px;
-  }
-
-  .scroll-button {
-    display: flex;
   }
 }
 

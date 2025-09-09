@@ -63,46 +63,58 @@ function Projects() {
       <h2 className="projects-title">Latest projects from Setayesh</h2>
 
       <div className="projects-scroll">
-        <button
-          className="scroll-button prev"
-          aria-label="previous project"
-          onClick={() => handleScroll('left')}
-        >
-          &#8249;
-        </button>
         <div className="projects-grid" ref={scrollRef}>
           {projects.map((proj, idx) => (
           <div className="project-card" key={idx}>
-            <img src={proj.image} alt={proj.title} className="project-img" />
-            <div className="project-details">
-              <h3>{proj.title}</h3>
-              <p>{proj.description}</p>
-              <div className="tech-tags">
-                {proj.tech.map((tech, i) => (
-                  <span className="tag" key={i}>{tech}</span>
-                ))}
-              </div>
-              <div className="project-links">
-                <a href={proj.link} target="_blank" rel="noopener noreferrer" className="external-link">
-                  ↗
-                </a>
-                {proj.figmaLink && (
-                  <a href={proj.figmaLink} target="_blank" rel="noopener noreferrer" className="external-link figma-link">
-                   (Figma)
+              <img src={proj.image} alt={proj.title} className="project-img" />
+              <div className="project-details">
+                <h3>{proj.title}</h3>
+                <p>{proj.description}</p>
+                <div className="tech-tags">
+                  {proj.tech.map((tech, i) => (
+                    <span className="tag" key={i}>{tech}</span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="external-link"
+                  >
+                    ↗
                   </a>
-                )}
+                  {proj.figmaLink && (
+                    <a
+                      href={proj.figmaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="external-link figma-link"
+                    >
+                      (Figma)
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
-        <button
-          className="scroll-button next"
-          aria-label="next project"
-          onClick={() => handleScroll('right')}
-        >
-          &#8250;
-        </button>
+        <div className="scroll-controls">
+          <button
+            className="scroll-button prev"
+            aria-label="previous project"
+            onClick={() => handleScroll('left')}
+          >
+            &#8249;
+          </button>
+          <button
+            className="scroll-button next"
+            aria-label="next project"
+            onClick={() => handleScroll('right')}
+          >
+            &#8250;
+          </button>
+        </div>
       </div>
     </section>
   );
