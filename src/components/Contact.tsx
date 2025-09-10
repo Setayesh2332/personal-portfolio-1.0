@@ -4,6 +4,9 @@ import emailjs from "@emailjs/browser";
 import { Hand, MailCheck, Smile } from "lucide-react";
 import { sendContactForm } from "../services/emailService";
 import "./Contact.css";
+import Flower from "../assets/carring heart .png";
+import Hibiscus from "../assets/Hearts illustration.png";
+import Orchid from "../assets/size of heart.png";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -38,6 +41,30 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact-section">
+      <img
+        src={Flower}
+        alt=""
+        aria-hidden="true"
+        className="contact-deco top-left"
+      />
+      <img
+        src={Hibiscus}
+        alt=""
+        aria-hidden="true"
+        className="contact-deco top-right"
+      />
+      <img
+        src={Orchid}
+        alt=""
+        aria-hidden="true"
+        className="contact-deco bottom-left"
+      />
+      <img
+        src={Flower}
+        alt=""
+        aria-hidden="true"
+        className="contact-deco bottom-right"
+      />
       <div className="contact-card">
         <h2 className="contact-title">📩 Say Hello!</h2>
         <p className="contact-subtext">

@@ -86,3 +86,38 @@
   font-weight: 500;
 }
 
+/* Decorative images */
+.contact-deco {
+  position: absolute;
+  width: 160px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  border: 3px solid #000;     
+  border-radius: 12px;        
+  box-sizing: border-box; 
+}
+
+.top-left {
+  top: 10%;
+  left: 10%;
+  transform: rotate(-15deg);
+}
+
+.top-right {
+  top: 10%;
+  right: 10%;
+  transform: rotate(15deg);
+}
+
+.bottom-left {
+  bottom: 10%;
+  left: 10%;
+  transform: rotate(10deg);
+}
+
+.bottom-right {
+  bottom: 10%;
+  right: 10%;
+  transform: rotate(-10deg);
+}
