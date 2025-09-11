@@ -16,10 +16,43 @@
   position: absolute;
   display: flex;
   gap: 0.15rem;
-  font-size: clamp(4rem, 20vw, 10rem);
-  font-weight: bold;
+  font-size: clamp(4rem, 15vw, 15rem);
+  font-family: "Finger Paint", cursive;
   pointer-events: none;
   z-index: 0;
+}
+
+.painted-letter {
+  display: inline-block;
+  color: #4285f4;
+}
+
+.painted-letter:nth-child(2) {
+  color: #ea4335;
+}
+
+.painted-letter:nth-child(3) {
+  color: #fbbc05;
+}
+
+.painted-letter:nth-child(4) {
+  color: #4285f4;
+}
+
+.painted-letter:nth-child(5) {
+  color: #34a853;
+}
+
+.painted-letter:nth-child(6) {
+  color: #ea4335;
+}
+
+.painted-letter:nth-child(7) {
+  color: #fbbc05;
+}
+
+.painted-letter:nth-child(8) {
+  color: #4285f4;
 }
 
 .fact-card {

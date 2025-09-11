@@ -50,9 +50,9 @@ function FunFacts() {
 
   return (
     <section id="funfacts" className="funfacts-hero">
-      <div className="google-doodle-name funfacts-name">
+      <div className="funfacts-name">
         {letters.map((letter, idx) => (
-          <span key={idx} className="google-letter">
+          <span key={idx} className="painted-letter">
             {letter}
           </span>
         ))}
