@@ -1,121 +1,92 @@
-import { useRef } from 'react';
-import Portfolio from '../assets/portfolio.png';
-import Sentient from '../assets/AI-sentient.png';
-import Chainon from '../assets/Chainon.png';
+import Portfolio from "../assets/portfolio.png";
+import Sentient from "../assets/AI-sentient.png";
+import Chainon from "../assets/Chainon.png";
 import "./Projects.css";
 
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  tech: string[];
+  link: string;
+  figmaLink?: string;
+};
+const projects: Project[] = [
+  {
+    title: "Personal Portfolio",
+    description:
+      "A responsive personal portfolio showcasing projects, skills, and contact info.",
+    image: Portfolio,
+    tech: ["React", "Next.js", "TypeScript", "Figma", "CSS", "Git"],
+    link: "https://setayesh.netlify.app/",
+  },
+  {
+    title: "Sentient",
+    description:
+      "An AI-powered assistant demo with integrated NLP and live querying capabilities.",
+    image: Sentient,
+    tech: ["React", "Next.js", "TypeScript", "Figma", "Git"],
+    link: "https://sentient-app.netlify.app/",
+    figmaLink:
+      "https://www.figma.com/design/CVe75JV86Pdk19oU68ar1l/Untitled?node-id=0-1&t=BIpQ4D0xKzz3zIbb-0",
+  },
+  {
+    title: "Le Chainon",
+    description:
+      "A website designed to support women in need and promote social outreach.",
+    image: Chainon,
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Git"],
+    link: "#",
+  },
+];
 function Projects() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const handleScroll = (direction: 'left' | 'right') => {
-    const container = scrollRef.current;
-    if (container) {
-      const scrollAmount = container.clientWidth;
-      container.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-  const projects = [
-    {
-      title: "Personal Portfolio",
-      description: "A responsive personal portfolio showcasing projects, skills, and contact info.",
-      image: Portfolio,
-      tech: ["React", "Next.js", "Typescript","Figma", "CSS", "Git"],
-      link: "https://setayesh.netlify.app/"
-    },
-    {
-      title: "Sentient",
-      description: "An AI-powered assistant demo with integrated NLP and live querying capabilities.",
-      image: Sentient,
-      tech: ["React", "Next.js", "Typescript", "Figma", "Git"],
-      link: "https://sentient-app.netlify.app/",
-      figmaLink: "https://www.figma.com/design/CVe75JV86Pdk19oU68ar1l/Untitled?node-id=0-1&t=BIpQ4D0xKzz3zIbb-0"
-    },
-    {
-      title: "Le Chainon",
-      description: "A website designed to support women in need and promote social outreach.",
-      image: Chainon,
-      tech: ["React", "Next.js", "Typescript", "Tailwindcss", "Git"],
-      link: "#"
-    },
-    {
-      title: "Le Chainon",
-      description: "A website designed to support women in need and promote social outreach.",
-      image: Chainon,
-      tech: ["React", "Next.js", "Typescript", "Tailwindcss", "Git"],
-      link: "#"
-    },
-    {
-      title: "Le Chainon",
-      description: "A website designed to support women in need and promote social outreach.",
-      image: Chainon,
-      tech: ["React", "Next.js", "Typescript", "Tailwindcss", "Git"],
-      link: "#"
-    }
-  ];
-
   return (
-    <section id="projects" className="projects-section">
-      <p className="discover-more" aria-label="discover more projects">
-        <span aria-hidden="true">✨</span> Discover more projects
-      </p>
-      <h2 className="projects-title">Latest projects from Setayesh</h2>
-
-      <div className="projects-scroll">
-        <div className="projects-grid" ref={scrollRef}>
-          {projects.map((proj, idx) => (
-          <div className="project-card" key={idx}>
-              <img src={proj.image} alt={proj.title} className="project-img" />
-              <div className="project-details">
-                <h3>{proj.title}</h3>
-                <p>{proj.description}</p>
-                <div className="tech-tags">
-                  {proj.tech.map((tech, i) => (
-                    <span className="tag" key={i}>{tech}</span>
+    <section id="projects" className="projects">
+      <div className="projects__inner">
+        <h2 className="projects__title">Projects</h2>
+        <div className="projects__list">
+          {projects.map((project) => (
+            <article className="projects-card" key={project.title}>
+              <div className="projects-card__media">
+                <img src={project.image} alt={project.title} />
+              </div>
+              <div className="projects-card__content">
+                <h3 className="projects-card__heading">{project.title}</h3>
+                <p className="projects-card__description">{project.description}</p>
+                <div className="projects-card__tags">
+                  {project.tech.map((tech) => (
+                    <span className="projects-card__tag" key={tech}>
+                      {tech}
+                    </span>
                   ))}
                 </div>
-                <div className="project-links">
+                <div className="projects-card__actions">
                   <a
-                    href={proj.link}
+                    href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="external-link"
+                    className="projects-card__link"
+                    aria-label={`Open ${project.title} project in a new tab`}
                   >
-                    ↗
+                    View project ↗
                   </a>
-                  {proj.figmaLink && (
+                  {project.figmaLink && (
                     <a
-                      href={proj.figmaLink}
+                      href={project.figmaLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="external-link figma-link"
+                      className="projects-card__link projects-card__link--secondary"
+                      aria-label={`Open ${project.title} design in Figma`}
                     >
-                      (Figma)
+                      Figma file ↗
                     </a>
                   )}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
-        <div className="scroll-controls">
-          <button
-            className="scroll-button prev"
-            aria-label="previous project"
-            onClick={() => handleScroll('left')}
-          >
-            &#8249;
-          </button>
-          <button
-            className="scroll-button next"
-            aria-label="next project"
-            onClick={() => handleScroll('right')}
-          >
-            &#8250;
-          </button>
         </div>
-      </div>
     </section>
   );
 }

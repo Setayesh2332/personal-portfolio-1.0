@@ -1,11 +1,11 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import CV from "./components/CV";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import FunFacts from "./components/FunFacts";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Education from "./components/Education";
 
 function App() {
   return (
@@ -13,10 +13,10 @@ function App() {
       <Navbar />
       <main>
         <Home />
-        <CV />
+        <Skills />
         <Projects />
         <Contact />
-        <Skills />
+        <Education />
         <FunFacts />
         <Footer />
       </main>

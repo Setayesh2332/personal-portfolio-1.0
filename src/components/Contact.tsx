@@ -1,113 +1,217 @@
-import { useEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ComponentType, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import { Hand, MailCheck, Smile } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { sendContactForm } from "../services/emailService";
 import "./Contact.css";
-import Flower from "../assets/carring heart .png";
-import Hibiscus from "../assets/Hearts illustration.png";
-import Orchid from "../assets/size of heart.png";
+
+type IconComponent = ComponentType<{ size?: number }>;
+
+type ContactDetail = {
+  label: string;
+  value: string;
+  href?: string;
+  Icon: IconComponent;
+};
+
+type SocialLink = {
+  label: string;
+  href: string;
+  Icon: IconComponent;
+};
+
+const contactDetails: ContactDetail[] = [
+  {
+    label: "Email",
+    value: "setayesh2332@gmail.com",
+    href: "mailto:setayesh2332@gmail.com",
+    Icon: Mail,
+  },
+  {
+    label: "Location",
+    value: "Montreal, Canada",
+    Icon: MapPin,
+  },
+];
+
+const socialLinks: SocialLink[] = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/setayesh-abbasi-moghadam/",
+    Icon: FaLinkedin,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Setayesh2332",
+    Icon: FaGithub,
+  },
+  {
+    label: "Email",
+    href: "mailto:setayesh2332@gmail.com",
+    Icon: FaEnvelope,
+  },
+];
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
-  const [iconIndex, setIconIndex] = useState(0);
+  const [isSending, setIsSending] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  // initialize EmailJS once
   useEffect(() => {
     emailjs.init(import.meta.env.VITE_EMAILJS_KEY!);
   }, []);
 
-  const confirmationIcons: ReactNode[] = [
-    <Hand size={56} key="hand" />, 
-    <MailCheck size={56} key="mail" />, 
-    <Smile size={56} key="smile" />,
-  ];
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
 
+    setIsSending(true);
     sendContactForm(formRef.current)
       .then(() => {
-        setIconIndex(Math.floor(Math.random() * confirmationIcons.length));
         setSubmitted(true);
+        formRef.current?.reset();
       })
       .catch((err) => {
         console.error("Error sending email:", err);
         setSubmitted(false);
+      })
+      .finally(() => {
+        setIsSending(false);
       });
   };
 
   return (
     <section id="contact" className="contact-section">
-      <img
-        src={Flower}
-        alt=""
-        aria-hidden="true"
-        className="contact-deco top-left"
-      />
-      <img
-        src={Hibiscus}
-        alt=""
-        aria-hidden="true"
-        className="contact-deco top-right"
-      />
-      <img
-        src={Orchid}
-        alt=""
-        aria-hidden="true"
-        className="contact-deco bottom-left"
-      />
-      <img
-        src={Flower}
-        alt=""
-        aria-hidden="true"
-        className="contact-deco bottom-right"
-      />
-      <div className="contact-card">
-        <h2 className="contact-title">📩 Say Hello!</h2>
-        <p className="contact-subtext">
-          Drop me a message, and let’s create something awesome together!        
-        </p>
-             {submitted ? (
-          <div className="success-message">
-            <p>Thank you! Your message has been sent.</p>
-            <span className="confirmation-icon">
-              {confirmationIcons[iconIndex]}
-            </span>
+      <div className="contact-container">
+        <div className="contact-form-card">
+          <div className="form-card-header">
+            <span className="contact-tag">Contact</span>
+            <h2>Tell me about your project</h2>
+            <p>
+              Share a few details and I&apos;ll get back to you within a couple of
+              business days.
+            </p>
           </div>
-        ) : (
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="contact-form"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              className="contact-input"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="contact-input"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Message"
-              className="contact-textarea"
-              required
-            />
-            <button type="submit" className="send-btn">
-              Send
-            </button>
-          </form>
-        )}
+
+          {submitted ? (
+            <div className="success-message" role="status" aria-live="polite">
+              <span className="success-message-icon">
+                <CheckCircle2 size={40} aria-hidden="true" />
+              </span>
+              <h3>Message sent!</h3>
+              <p>
+                Thanks for reaching out. I&apos;ll review your note and respond
+                soon.
+              </p>
+              <button
+                type="button"
+                className="send-btn"
+                onClick={() => setSubmitted(false)}
+              >
+                Send another message
+              </button>
+            </div>
+          ) : (
+            <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+              <div className="form-row">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  className="contact-input"
+                  autoComplete="name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  className="contact-input"
+                  autoComplete="email"
+                  required
+                />
+              </div>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                className="contact-input"
+                autoComplete="off"
+              />
+              <textarea
+                name="message"
+                placeholder="Tell me about your project..."
+                className="contact-textarea"
+                rows={6}
+                required
+              />
+              <button type="submit" className="send-btn" disabled={isSending}>
+                {isSending ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          )}
+        </div>
+
+        <div className="contact-details-card">
+          <div className="contact-details-intro">
+            <h3>Contact Information</h3>
+            <p>
+              Always open to having a friendly chat about technology and design.
+              Feel free to reach out through any of the channels below.
+            </p>
+          </div>
+
+          <div className="contact-details-list">
+            {contactDetails.map(({ label, value, href, Icon }) => {
+              const DetailIcon = Icon;
+              return (
+                <div className="contact-detail" key={label}>
+                  <span className="contact-detail-icon">
+                    <DetailIcon size={22} aria-hidden="true" />
+                  </span>
+                  <div className="contact-detail-content">
+                    <span>{label}</span>
+                    {href ? (
+                      <a href={href}>{value}</a>
+                    ) : (
+                      <p>{value}</p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="contact-follow">
+            <h4>Follow Me</h4>
+            <div className="contact-socials">
+              {socialLinks.map(({ label, href, Icon }) => {
+                const SocialIcon = Icon;
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Follow on ${label}`}
+                  >
+                    <SocialIcon size={20} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="availability-card">
+            <span className="availability-dot" aria-hidden="true" />
+            <div>
+              <h4>Available for internship</h4>
+              <p>
+                I&apos;m currently seeking internship or summer opportunities. Let&apos;s discuss how I can contribute to your team!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
