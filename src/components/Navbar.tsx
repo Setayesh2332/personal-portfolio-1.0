@@ -12,7 +12,6 @@ function Navbar() {
     setDarkMode(!darkMode);
   };
 
-  // ✅ Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -37,24 +36,19 @@ function Navbar() {
   return (
     <>
       <nav className="custom-navbar">
-        <a href="#home" className="brand">Setayesh</a>
+        <a href="#home" className="brand" aria-label="Back to home">
+          S.A.M.
+        </a>
 
         <div className="nav-right">
           <ul className="nav-links">
-            <li><a href="#cv">CV</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#funfacts">Fun Facts</a></li>
             <li><a href="#contact">Contact</a></li>
             <li>
               <button className="theme-btn" onClick={toggleTheme}>
                 {darkMode ? <Moon size={16} /> : <Sun size={16} />}
               </button>
-            </li>
-            <li>
-              <a href="/CV-Setayesh.pdf" target="_blank" className="cv-btn" rel="noopener noreferrer">
-                Download CV
-              </a>
             </li>
           </ul>
 
@@ -64,14 +58,12 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* ✅ Dropdown mobile menu */}
+      {/* Dropdown mobile menu */}
       {menuOpen && (
         <div className="mobile-dropdown-menu" ref={menuRef}>
           <ul className="mobile-full-links">
-            <li><a href="#cv" onClick={() => setMenuOpen(false)}>CV</a></li>
             <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
             <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
-            <li><a href="#funfacts" onClick={() => setMenuOpen(false)}>Fun Facts</a></li>
             <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
           </ul>
 
@@ -79,7 +71,12 @@ function Navbar() {
             <button onClick={toggleTheme}>
               {darkMode ? <Moon size={20} /> : <Sun size={20} />}
             </button>
-            <a href="/CV-Setayesh.pdf" target="_blank" className="cv-btn-mobile" rel="noopener noreferrer">
+            <a
+              href="/CV-Setayesh.pdf"
+              target="_blank"
+              className="cv-btn-mobile"
+              rel="noopener noreferrer"
+            >
               Download CV
             </a>
           </div>

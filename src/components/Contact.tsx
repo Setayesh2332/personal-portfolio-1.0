@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ComponentType, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, CheckCircle2 } from "lucide-react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { sendContactForm } from "../services/emailService";
 import "./Contact.css";
