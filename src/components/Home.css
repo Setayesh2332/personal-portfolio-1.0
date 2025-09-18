@@ -6,7 +6,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(3rem, 8vw, 6rem);
   align-items: center;
-  padding: clamp(4rem, 10vw, 7rem) clamp(1.5rem, 6vw, 7rem);
+  padding: clamp(4rem, 10vw, 7rem) clamp(12rem, 6vw, 7rem);
   background-color: #ffffff;
   color: #0b1b24;
   overflow: hidden;
