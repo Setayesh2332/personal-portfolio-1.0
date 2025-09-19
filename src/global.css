@@ -19,11 +19,16 @@ body {
   background-color: #121212;
   background-image: radial-gradient(#333 3px, transparent 3px);
   background-size: 50px 50px;
-  color: #ffffff;
+  color: #e5f7f9;
 }
 
 .dark-theme a {
-  color: #ffffff !important;
+  color: #e5f7f9;
+  transition: color 0.2s ease;
+}
+
+.dark-theme a:hover {
+  color: #4ce8fa;
 }
 
 main > section:not(:first-of-type),

@@ -45,11 +45,6 @@ function Navbar() {
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li className="nav-links__theme">
-              <button className="theme-btn" onClick={toggleTheme}>
-                {darkMode ? <Moon size={16} /> : <Sun size={16} />}
-              </button>
-            </li>
             <li className="nav-links__cta">
               <a
                 href="/CV-Setayesh.pdf"
@@ -59,6 +54,11 @@ function Navbar() {
               >
                 Download CV
               </a>
+            </li>
+            <li className="nav-links__theme">
+              <button className="theme-btn" onClick={toggleTheme}>
+                {darkMode ? <Moon size={16} /> : <Sun size={16} />}
+              </button>
             </li>
           </ul>
 
