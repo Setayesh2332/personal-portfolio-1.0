@@ -42,13 +42,23 @@ function Navbar() {
 
         <div className="nav-right">
           <ul className="nav-links">
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li>
+            <li className="nav-links__theme">
               <button className="theme-btn" onClick={toggleTheme}>
                 {darkMode ? <Moon size={16} /> : <Sun size={16} />}
               </button>
+            </li>
+            <li className="nav-links__cta">
+              <a
+                href="/CV-Setayesh.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-cv-btn"
+              >
+                Download CV
+              </a>
             </li>
           </ul>
 
@@ -62,8 +72,8 @@ function Navbar() {
       {menuOpen && (
         <div className="mobile-dropdown-menu" ref={menuRef}>
           <ul className="mobile-full-links">
-            <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
             <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
+            <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
             <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
           </ul>
 

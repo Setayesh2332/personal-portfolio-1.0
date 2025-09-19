@@ -1,5 +1,5 @@
 /* =============================
-🧭 Navbar
+Navbar
 ============================= */
 .custom-navbar {
   position: sticky;
@@ -56,6 +56,38 @@
 .nav-links li a:hover,
 .nav-links li a:focus-visible {
   color: #29a9ba;
+}
+
+.nav-links__cta {
+  margin-left: clamp(0.75rem, 3vw, 1.75rem);
+}
+
+.nav-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #29a9ba, #0c4249);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(12, 66, 73, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(12, 66, 73, 0.25);
+}
+
+.nav-cv-btn:focus-visible {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 3px rgba(41, 169, 186, 0.25),
+    0 16px 40px rgba(12, 66, 73, 0.25);
 }
 
 .nav-links__theme {
@@ -216,6 +248,20 @@ dark-theme .custom-navbar {
 .dark-theme .nav-links li a:hover,
 .dark-theme .nav-links li a:focus-visible {
   color: #37c2d2;
+}
+
+.dark-theme .nav-cv-btn {
+  box-shadow: 0 12px 30px rgba(55, 194, 210, 0.24);
+}
+
+.dark-theme .nav-cv-btn:hover {
+  box-shadow: 0 16px 40px rgba(55, 194, 210, 0.3);
+}
+
+.dark-theme .nav-cv-btn:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(55, 194, 210, 0.32),
+    0 16px 40px rgba(55, 194, 210, 0.3);
 }
 
 .dark-theme .theme-btn {

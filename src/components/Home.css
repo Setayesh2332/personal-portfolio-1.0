@@ -117,6 +117,10 @@
   color: #021214;
 }
 
+.dark-theme .hero__image img {
+  filter: brightness(0) invert(1);
+}
+
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
