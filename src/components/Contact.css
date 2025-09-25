@@ -283,6 +283,7 @@
   border-radius: 50%;
   background: #39c56d;
   margin-top: 0.4rem;
+  display: inline-block;
 }
 
 .availability-card h4 {
@@ -398,6 +399,12 @@ Dark Theme Overrides
 
 .dark-theme .availability-dot {
   background: #5bd788;
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
