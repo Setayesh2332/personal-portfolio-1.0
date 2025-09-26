@@ -278,12 +278,15 @@
 }
 
 .availability-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #39c56d;
-  margin-top: 0.4rem;
+  --availability-blink-color: 57, 197, 109;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgb(var(--availability-blink-color));
+  margin-top: 0.45rem;
   display: inline-block;
+  flex-shrink: 0;
+  animation: availability-blink 1.4s ease-in-out infinite;
 }
 
 .availability-card h4 {
@@ -398,7 +401,25 @@ Dark Theme Overrides
 }
 
 .dark-theme .availability-dot {
-  background: #5bd788;
+  --availability-blink-color: 91, 215, 136;
+}
+
+@keyframes availability-blink {
+  0%,
+  100% {
+    opacity: 0.35;
+    box-shadow: 0 0 0 0 rgba(var(--availability-blink-color), 0.35);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 6px rgba(var(--availability-blink-color), 0.1);
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
