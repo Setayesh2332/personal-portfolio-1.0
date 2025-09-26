@@ -5,9 +5,11 @@ function Home() {
     <section className="hero" id="home">
       <div className="hero__content">
         <h1 className="hero__heading">
-          Hi my name is <span className="hero__name">Setayesh</span>
+          Hi there! 
           <br />
-          and ...
+          <h2 >I'm Setayesh I turn ideas into code and occasionally the code turns out exactly like I imagined <span className="hero__name"></span>
+          
+          </h2>
         </h1>
         <div className="hero__actions">
           <a
