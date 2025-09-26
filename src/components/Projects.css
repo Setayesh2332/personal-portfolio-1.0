@@ -45,7 +45,7 @@
 .projects-card__media {
   border-radius: 18px;
   background-color: #d9d9d9;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 3;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -181,7 +181,7 @@
 
   .projects-card__media {
     width: 100%;
-    max-width: 420px;
+    max-width: 545px;
     margin: 0 auto;
   }
 }
