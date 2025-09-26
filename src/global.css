@@ -35,3 +35,8 @@ main > section:not(:first-of-type),
 main > footer {
   border-top: 1px solid #000;
 }
+
+.dark-theme main > section:not(:first-of-type),
+.dark-theme main > footer {
+  border-top-color: #fff;
+}

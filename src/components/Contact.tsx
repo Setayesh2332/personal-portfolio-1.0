@@ -139,7 +139,7 @@ export default function Contact() {
               />
               <textarea
                 name="message"
-                placeholder="Tell me about your project..."
+                placeholder="Write your message..."
                 className="contact-textarea"
                 rows={6}
                 required
