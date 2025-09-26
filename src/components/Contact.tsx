@@ -86,10 +86,9 @@ export default function Contact() {
         <div className="contact-form-card">
           <div className="form-card-header">
             <span className="contact-tag">Contact</span>
-            <h2>Tell me about your project</h2>
+            <h2>Let's talk </h2>
             <p>
-              Share a few details and I&apos;ll get back to you within a couple of
-              business days.
+              I'll get back to you within a couple of business days.
             </p>
           </div>
 

@@ -32,7 +32,7 @@ function Footer() {
         <a href="#cv">Resume</a>
       </nav>
 
-      <p className="footer-note">Made with ❤️ and ☕ by Setayesh A.M.</p>
+      <p className="footer-note">Made with ❤️ by Setayesh A.M.</p>
       <p className="footer-help">
         Need something? → <a href="#contact">Contact Me</a>
       </p>
