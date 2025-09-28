@@ -13,7 +13,7 @@ type Project = {
 };
 const projects: Project[] = [
   {
-    title: "Sentient",
+    title: "Sentient(Ongoing)",
     description:
       "An AI-powered assistant demo with integrated NLP and live querying capabilities.",
     image: Sentient,
@@ -21,6 +21,16 @@ const projects: Project[] = [
     link: "https://sentient-app.netlify.app/",
     figmaLink:
       "https://www.figma.com/design/CVe75JV86Pdk19oU68ar1l/Untitled?node-id=0-1&t=BIpQ4D0xKzz3zIbb-0",
+  },
+  {
+    title: "Nimbus",
+    description:
+      "Weather app.",
+    image: Sentient,
+    tech: ["React", "Next.js", "TypeScript", "Figma", "Git"],
+    link: "https://nimbus0.netlify.app/",
+    figmaLink:
+      "https://www.figma.com/design/8EpdFpSw2hoCDvjFBa17N6/Untitled?node-id=0-1&p=f&t=D6fN06dwoJffsEo0-0",
   },
   {
     title: "Personal Portfolio",
@@ -36,6 +46,7 @@ const projects: Project[] = [
       "A website designed to support women in need and promote social outreach.",
     image: Chainon,
     tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Git"],
+    link: "#",
   },
 ];
 function Projects() {
