@@ -8,18 +8,10 @@ type Project = {
   description: string;
   image: string;
   tech: string[];
-  link: string;
+  link?: string;
   figmaLink?: string;
 };
 const projects: Project[] = [
-  {
-    title: "Personal Portfolio",
-    description:
-      "A responsive personal portfolio showcasing projects, skills, and contact info.",
-    image: Portfolio,
-    tech: ["React", "Next.js", "TypeScript", "Figma", "CSS", "Git"],
-    link: "https://setayesh.netlify.app/",
-  },
   {
     title: "Sentient",
     description:
@@ -31,12 +23,19 @@ const projects: Project[] = [
       "https://www.figma.com/design/CVe75JV86Pdk19oU68ar1l/Untitled?node-id=0-1&t=BIpQ4D0xKzz3zIbb-0",
   },
   {
+    title: "Personal Portfolio",
+    description:
+      "A responsive personal portfolio showcasing projects, skills, and contact info.",
+    image: Portfolio,
+    tech: ["React", "Next.js", "TypeScript", "Figma", "CSS", "Git"],
+    link: "https://setayesh.netlify.app/",
+  },
+  {
     title: "Le Chainon",
     description:
       "A website designed to support women in need and promote social outreach.",
     image: Chainon,
     tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Git"],
-    link: "#",
   },
 ];
 function Projects() {
