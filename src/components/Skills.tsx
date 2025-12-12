@@ -5,21 +5,19 @@ const skillCategories = [
     title: "Languages",
     items: [
       "Java",
-      "Python",
       "HTML/CSS",
       "JavaScript",
-      "TypeScript",
       "SQL",
       "Bash/Shell",
     ],
   },
   {
     title: "Tools & Frameworks",
-    items: ["Git", "VS Code", "React", "Figma", "IntelliJ"],
+    items: ["Git", "VS Code", "React", "Figma", "IntelliJ", "Oracle SQL Developer", "Framer"],
   },
   {
     title: "Database",
-    items: ["PostgreSQL"],
+    items: ["PostgreSQL", "Superbase"],
   },
 ] as const;
 
