@@ -70,7 +70,7 @@ function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2025 Setayesh Abbasi M. • Made with ❤️
+            © 2025 Setayesh Abbasi M.
           </p>
 
           <div className="footer-legal">
