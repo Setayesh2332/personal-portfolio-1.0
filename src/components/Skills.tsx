@@ -17,7 +17,7 @@ const skillCategories = [
   },
   {
     title: "Database",
-    items: ["PostgreSQL", "Superbase"],
+    items: ["PostgreSQL", "Supabase"],
   },
 ] as const;
 

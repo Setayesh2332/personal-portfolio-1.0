@@ -1,6 +1,7 @@
 import Portfolio from "../assets/portfolio.png";
 import Sentient from "../assets/AI-sentient.png";
 import Chainon from "../assets/Chainon.png";
+import UQAMarketplace from "../assets/UQAMarketplace.png";
 import "./Projects.css";
 
 type Project = {
@@ -12,6 +13,16 @@ type Project = {
   figmaLink?: string;
 };
 const projects: Project[] = [
+  {
+    title: "UQAMarketplace",
+    description:
+      "A student-focused marketplace web application developed as a university group project, allowing UQAM students to buy, sell, and exchange goods and services with authentication, listings, and messaging features.",
+    image: UQAMarketplace,
+    tech: ["React", "Supabase", "PostgreSQL", "SQL", "Git"],
+    link: "/projects/uqamarketplace",
+    figmaLink:
+      "https://www.figma.com/design/CVe75JV86Pdk19oU68ar1l/Untitled?node-id=0-1&t=BIpQ4D0xKzz3zIbb-0",
+  },
   {
     title: "Sentient(Ongoing)",
     description:
