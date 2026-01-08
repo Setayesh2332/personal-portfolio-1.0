@@ -1,7 +1,6 @@
 import "./UQAMarketplace.css";
 import bg from "../assets/backgroundcasestudy.jpg";
 
-// PLACEHOLDERS - Replace with your actual screenshots
 import heroMockup from "../assets/casestudy1.png"; // Main hero showcase
 import listingsBrowse from "../assets/portfolio.png"; // Listings page
 import sellForm from "../assets/casestudy1.png"; // Sell form screenshot
