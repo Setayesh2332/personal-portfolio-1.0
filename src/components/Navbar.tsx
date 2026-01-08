@@ -7,10 +7,29 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const menuRef = useRef(null);
+  
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.body.classList.add("dark-theme");
+      setDarkMode(true);
+    }
+  }, []);
 
   const toggleTheme = () => {
-    document.body.classList.toggle("dark-theme");
-    setDarkMode(!darkMode);
+    const newDarkMode = !darkMode;
+    
+    if (newDarkMode) {
+      document.body.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark-theme");
+      localStorage.setItem("theme", "light");
+    }
+    
+    setDarkMode(newDarkMode);
   };
 
   useEffect(() => {
@@ -62,13 +81,21 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-links__theme">
-              <button className="theme-btn" onClick={toggleTheme}>
+              <button 
+                className="theme-btn" 
+                onClick={toggleTheme}
+                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              >
                 {darkMode ? <Moon size={16} /> : <Sun size={16} />}
               </button>
             </li>
           </ul>
 
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <button 
+            className="menu-toggle" 
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
             <Menu size={24} />
           </button>
         </div>
@@ -84,7 +111,10 @@ function Navbar() {
           </ul>
 
           <div className="mobile-full-footer">
-            <button onClick={toggleTheme}>
+            <button 
+              onClick={toggleTheme}
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+            >
               {darkMode ? <Moon size={20} /> : <Sun size={20} />}
             </button>
             <a

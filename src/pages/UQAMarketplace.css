@@ -1,4 +1,6 @@
-
+/* ===============================
+   COLOR PALETTE (TURQUOISE)
+================================ */
 :root {
   --cs-accent: #3fbfc1;
   --cs-accent-light: #9adfe0;
@@ -17,8 +19,10 @@
   --cs-white-12: rgba(255, 255, 255, 0.12);
   --cs-white-08: rgba(255, 255, 255, 0.08);
 
+  --cs-bg: #ffffff;
   --cs-bg-alt: #f8fafa;
   --cs-border: rgba(63, 191, 193, 0.22);
+  --cs-card-bg: #ffffff;
 
   --cs-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   --cs-shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -28,11 +32,67 @@
 }
 
 /* ===============================
+   DARK MODE
+================================ */
+/* Support both system preference AND navbar toggle */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cs-accent: #4dd4d6;
+    --cs-accent-light: #7de3e5;
+    --cs-accent-dark: #3fbfc1;
+
+    --cs-overlay-top: rgba(10, 60, 64, 0.85);
+    --cs-overlay-bottom: rgba(10, 60, 64, 0.95);
+
+    --cs-text: #e8f5f5;
+    --cs-muted: #b8dfe0;
+
+    --cs-ink: rgba(255, 255, 255, 0.92);
+    --cs-ink-muted: rgba(255, 255, 255, 0.68);
+    --cs-ink-light: rgba(255, 255, 255, 0.48);
+
+    --cs-bg: #0a0e12;
+    --cs-bg-alt: #131920;
+    --cs-border: rgba(63, 191, 193, 0.25);
+    --cs-card-bg: #1a2128;
+
+    --cs-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    --cs-shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Dark mode when navbar toggle is active */
+.dark-theme {
+  --cs-accent: #4dd4d6;
+  --cs-accent-light: #7de3e5;
+  --cs-accent-dark: #3fbfc1;
+
+  --cs-overlay-top: rgba(10, 60, 64, 0.85);
+  --cs-overlay-bottom: rgba(10, 60, 64, 0.95);
+
+  --cs-text: #e8f5f5;
+  --cs-muted: #b8dfe0;
+
+  --cs-ink: rgba(255, 255, 255, 0.92);
+  --cs-ink-muted: rgba(255, 255, 255, 0.68);
+  --cs-ink-light: rgba(255, 255, 255, 0.48);
+
+  --cs-bg: #0a0e12;
+  --cs-bg-alt: #131920;
+  --cs-border: rgba(63, 191, 193, 0.25);
+  --cs-card-bg: #1a2128;
+
+  --cs-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  --cs-shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
    PAGE
 ================================ */
 .csPage {
-  background: #fff;
-  color: #0a0a0a;
+  background: var(--cs-bg);
+  color: var(--cs-ink);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ===============================
@@ -267,9 +327,10 @@
 .csProblemCard {
   padding: 24px;
   border-radius: var(--cs-radius-sm);
-  background: #fff;
+  background: var(--cs-card-bg);
   border: 1px solid var(--cs-border);
   box-shadow: var(--cs-shadow-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .csProblemCard__icon {
@@ -393,11 +454,12 @@
 }
 
 .csPersona {
-  background: #fff;
+  background: var(--cs-card-bg);
   border-radius: var(--cs-radius);
   padding: 28px;
   box-shadow: var(--cs-shadow-sm);
   border: 1px solid var(--cs-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .csPersona__header {
@@ -449,10 +511,11 @@
 
 .csIACard {
   padding: 24px;
-  background: #fff;
+  background: var(--cs-card-bg);
   border-radius: var(--cs-radius-sm);
   border: 2px solid var(--cs-border);
   text-align: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .csIACard__number {
@@ -529,10 +592,11 @@
 
 .csDecision {
   padding: 28px;
-  background: #fff;
+  background: var(--cs-card-bg);
   border-radius: var(--cs-radius);
   border: 1px solid var(--cs-border);
   box-shadow: var(--cs-shadow-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .csDecision__tag {
@@ -628,10 +692,11 @@
 
 .csChallenge {
   padding: 28px;
-  background: #fff;
+  background: var(--cs-card-bg);
   border-radius: var(--cs-radius);
   border-left: 4px solid var(--cs-accent);
   box-shadow: var(--cs-shadow-sm);
+  transition: background-color 0.3s ease;
 }
 
 .csChallenge__header {
@@ -675,10 +740,11 @@
 .csResult {
   text-align: center;
   padding: 28px;
-  background: #fff;
+  background: var(--cs-card-bg);
   border-radius: var(--cs-radius-sm);
   border: 2px solid var(--cs-accent);
   box-shadow: var(--cs-shadow-sm);
+  transition: background-color 0.3s ease;
 }
 
 .csResult__number {
@@ -712,10 +778,11 @@
 
 .csTestimonial {
   padding: 24px;
-  background: #fff;
+  background: var(--cs-card-bg);
   border-radius: var(--cs-radius-sm);
   border-left: 3px solid var(--cs-accent);
   box-shadow: var(--cs-shadow-sm);
+  transition: background-color 0.3s ease;
 }
 
 .csTestimonial__text {
@@ -768,11 +835,12 @@
 
 .csFutureCard {
   padding: 24px;
-  background: #fff;
+  background: var(--cs-card-bg);
   border-radius: var(--cs-radius-sm);
   border: 1px solid var(--cs-border);
   box-shadow: var(--cs-shadow-sm);
   text-align: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .csFutureCard__icon {
