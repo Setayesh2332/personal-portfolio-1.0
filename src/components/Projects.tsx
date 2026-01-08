@@ -20,8 +20,6 @@ const projects: Project[] = [
     image: UQAMarketplace,
     tech: ["React", "Supabase", "PostgreSQL", "SQL", "Git"],
     link: "/projects/uqamarketplace",
-    figmaLink:
-      "https://www.figma.com/design/CVe75JV86Pdk19oU68ar1l/Untitled?node-id=0-1&t=BIpQ4D0xKzz3zIbb-0",
   },
   {
     title: "Sentient(Ongoing)",

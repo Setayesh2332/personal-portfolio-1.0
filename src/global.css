@@ -11,14 +11,10 @@ html, body {
 
 body {
   background-color: #ffffff;
-  background-image: radial-gradient(#d8d8d8 3px, transparent 3px);
-  background-size: 50px 50px;
 }
 
 .dark-theme {
   background-color: #121212;
-  background-image: radial-gradient(#333 3px, transparent 3px);
-  background-size: 50px 50px;
   color: #e5f7f9;
 }
 

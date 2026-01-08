@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Sun, Moon, Menu } from "lucide-react";
 import "./Navbar.css";
 
@@ -36,15 +37,20 @@ function Navbar() {
   return (
     <>
       <nav className="custom-navbar">
-        <a href="#home" className="brand" aria-label="Back to home">
+        <Link
+          to="/"
+          className="brand"
+          aria-label="Back to home"
+          onClick={() => setMenuOpen(false)}
+        >
           S.A.M.
-        </a>
+        </Link>
 
         <div className="nav-right">
           <ul className="nav-links">
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/#skills">Skills</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#contact">Contact</a></li>
             <li className="nav-links__cta">
               <a
                 href="/CV-Setayesh.pdf"
