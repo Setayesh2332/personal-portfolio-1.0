@@ -22,7 +22,7 @@ const projects: Project[] = [
       "A UQAM student marketplace enabling secure listings and messaging, built as a university group project.",
     image: UQAMarketplace,
     tech: ["React", "Supabase", "Javascript", "TypeScript", "Git"],
-    link: "https://uqamarketplace.netlify.app/login",
+    link: "https://uqamarketplace.netlify.app",
     caseStudyLink: "/projects/uqamarketplace",
     githubLink: "https://github.com/yourusername/uqamarketplace",
   },
