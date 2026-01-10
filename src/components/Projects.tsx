@@ -87,7 +87,7 @@ function Projects() {
                   {project.caseStudyLink && (
                     <Link
                       to={project.caseStudyLink}
-                      className="projects-card__link"
+                      className="projects-card__link projects-card__link--secondary"
                       aria-label={`Open ${project.title} case study`}
                     >
                       Case study ↗
