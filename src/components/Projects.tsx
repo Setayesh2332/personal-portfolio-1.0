@@ -2,6 +2,7 @@ import Portfolio from "../assets/portfolio.png";
 import Sentient from "../assets/AI-sentient.png";
 import Chainon from "../assets/Chainon.png";
 import UQAMarketplace from "../assets/UQAMarketplace.png";
+import { Link } from "react-router-dom";
 import "./Projects.css";
 
 type Project = {
@@ -10,7 +11,9 @@ type Project = {
   image: string;
   tech: string[];
   link?: string;
+  caseStudyLink?: string;
   figmaLink?: string;
+  githubLink?: string;
 };
 const projects: Project[] = [
   {
@@ -19,7 +22,9 @@ const projects: Project[] = [
       "A UQAM student marketplace enabling secure listings and messaging, built as a university group project.",
     image: UQAMarketplace,
     tech: ["React", "Supabase", "Javascript", "TypeScript", "Git"],
-    link: "/projects/uqamarketplace",
+    link: "https://uqamarketplace.netlify.app/login",
+    caseStudyLink: "/projects/uqamarketplace",
+    githubLink: "https://github.com/yourusername/uqamarketplace",
   },
   {
     title: "Sentient(Ongoing)",
@@ -79,6 +84,15 @@ function Projects() {
                   >
                     View project ↗
                   </a>
+                  {project.caseStudyLink && (
+                    <Link
+                      to={project.caseStudyLink}
+                      className="projects-card__link"
+                      aria-label={`Open ${project.title} case study`}
+                    >
+                      Case study ↗
+                    </Link>
+                  )}
                   {project.figmaLink && (
                     <a
                       href={project.figmaLink}
