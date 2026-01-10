@@ -16,9 +16,9 @@ const projects: Project[] = [
   {
     title: "UQAMarketplace",
     description:
-      "A student-focused marketplace web application developed as a university group project, allowing UQAM students to buy, sell, and exchange goods and services with authentication, listings, and messaging features.",
+      "A UQAM student marketplace enabling secure listings and messaging, built as a university group project.",
     image: UQAMarketplace,
-    tech: ["React", "Supabase", "PostgreSQL", "SQL", "Git"],
+    tech: ["React", "Supabase", "Javascript", "TypeScript", "Git"],
     link: "/projects/uqamarketplace",
   },
   {
