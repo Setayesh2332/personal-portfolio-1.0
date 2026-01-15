@@ -2,10 +2,10 @@ import "./UQAMarketplace.css";
 import bg from "../assets/backgroundcasestudy.jpg";
 
 import heroMockup from "../assets/casestudy1.png"; // Main hero showcase
-import listingsBrowse from "../assets/portfolio.png"; // Listings page
-import sellForm from "../assets/casestudy1.png"; // Sell form screenshot
-import messaging from "../assets/portfolio.png"; // Messaging interface
-import userProfile from "../assets/casestudy1.png"; // Profile page
+import listingsBrowse from "../assets/case1-listingpage0.png"; // Listings page
+import sellForm from "../assets/case1-SellingPage.png"; // Sell form screenshot
+import messaging from "../assets/case1-messagepage.png"; // Messaging interface
+import userProfile from "../assets/case1-userprofilepage.png"; // Profile page
 import wireframeSketch from "../assets/portfolio.png"; // Your wireframes/sketches
 import beforeAfter from "../assets/casestudy1.png"; // Design iteration example
 import designSystem from "../assets/portfolio.png"; // Colors, typography, components
