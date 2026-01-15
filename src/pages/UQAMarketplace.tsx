@@ -7,7 +7,7 @@ import sellForm from "../assets/case1-SellingPage.png"; // Sell form screenshot
 import messaging from "../assets/case1-messagepage.png"; // Messaging interface
 import userProfile from "../assets/case1-userprofilepage.png"; // Profile page
 import wireframeSketch from "../assets/portfolio.png"; // Your wireframes/sketches
-import beforeAfter from "../assets/casestudy1.png"; // Design iteration example
+import beforeAfter from "../assets/userflow.png"; // Design iteration example
 import designSystem from "../assets/portfolio.png"; // Colors, typography, components
 
 export default function UQAMarketplace() {
