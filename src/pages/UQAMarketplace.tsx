@@ -6,9 +6,9 @@ import listingsBrowse from "../assets/case1-listingpage0.png"; // Listings page
 import sellForm from "../assets/case1-SellingPage.png"; // Sell form screenshot
 import messaging from "../assets/case1-messagepage.png"; // Messaging interface
 import userProfile from "../assets/case1-userprofilepage.png"; // Profile page
-import wireframeSketch from "../assets/portfolio.png"; // Your wireframes/sketches
+import wireframeSketch from "../assets/NotAvailableYet.jpg"; // My wireframes/sketches
 import beforeAfter from "../assets/userflow.png"; // Design iteration example
-import designSystem from "../assets/portfolio.png"; // Colors, typography, components
+import designSystem from "../assets/NotAvailableYet.jpg"; // Colors, typography, components
 
 export default function UQAMarketplace() {
   return (
@@ -28,6 +28,9 @@ export default function UQAMarketplace() {
             to buy, sell, and exchange textbooks, electronics, and campus essentials. 
             This case study explores how thoughtful UX design transformed fragmented 
             student buying behaviors into a secure, intuitive platform.
+          </p>
+          <p className="caseHero__desc">
+            This page is under construction. Full case study coming soon!
           </p>
 
           {/* META ROW */}
